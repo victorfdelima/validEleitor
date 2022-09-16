@@ -1,14 +1,21 @@
-async function handler(req, res) {
-  const date = new Date();
-  const url = await fetch(
-    "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2022/35157/2030402020/candidato/50000867342"
+const candidatos = (req, res) => {
+  const estadosEscolhidos = [
+    "ac",
+    "al",
+    "df",
+    "am",
+    "ba",
+    "ce",
+    "df",
+    "es",
+    "go",
+    "ma",
+  ];
+  const cargoEscolhido = ["0003", "0005", "0006", "0007"];
+
+  fetch(
+    `http://divulga.tse.jus.br/2018/divulgacao/oficial/297/dadosdivweb/${estadosEscolhidos}/${estadosEscolhidos}-${cargoEscolhido}-e000297-w.js"`
   );
+};
 
-  const candidato = await url;
-
-  res.send({
-    date: date.toGMTString(),
-    url: url,
-  });
-}
-export default handler;
+export default candidatos;
