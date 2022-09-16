@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 export default function Home() {
   return (
@@ -18,20 +17,17 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+          <a href="#" className={styles.card}>
             <h2>Brasil&rarr;</h2>
             <p>Votos Válidos no Brasil</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
+          <a href="#" className={styles.card}>
             <h2>Norte &rarr;</h2>
             <p>Acre, Amapá, Amazonas, Pará, Rondônia, Roraima e Tocantins.</p>
           </a>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
+          <a href="#" className={styles.card}>
             <h2>Nordeste &rarr;</h2>
             <p>
               Alagoas, Bahia, Ceará, Maranhão, Paraíba, Pernambuco, Piauí, Rio
@@ -39,24 +35,15 @@ export default function Home() {
             </p>
           </a>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
+          <a href="#" className={styles.card}>
             <h2>Centro-Oeste &rarr;</h2>
             <p>Distrito-Federal, Goiás, Mato Grosso e Mato Grosso do Sul..</p>
           </a>
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
+          <a href="#" className={styles.card}>
             <h2>Sudeste &rarr;</h2>
             <p>Espírito Santo, Minas Gerais, Rio de Janeiro e São Paulo.</p>
           </a>
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
+          <a href="#" className={styles.card}>
             <h2>Sul &rarr;</h2>
             <p>Paraná, Rio Grande do Sul e Santa Catarina.</p>
           </a>
