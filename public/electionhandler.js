@@ -9,8 +9,8 @@ function generateColors(qnt) {
 
   for (let i = 0; i < qnt; i++) {
     colors.push(
-        // eslint-disable-next-line max-len
-        `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 0.8)`);
+      // eslint-disable-next-line max-len
+      `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 0.8)`);
   }
   return colors;
 }
@@ -73,7 +73,7 @@ async function plotVotesPerCandidate(data) {
           {
             data: graphVotes,
             backgroundColor: generateColors(Object.keys(data.candidates)
-                .length),
+              .length),
           },
         ],
 
@@ -89,11 +89,11 @@ async function plotVotesPerCandidate(data) {
         },
         tooltips: {
           callbacks: {
-            label: function(tooltipItem, data) {
+            label: function (tooltipItem, data) {
               let label = data.datasets[0].data[tooltipItem.index];
               let percentage = (
                 (parseInt(graphVotes[tooltipItem.index]) * 100) /
-                votesArray.reduce(function(a, b) {
+                votesArray.reduce(function (a, b) {
                   return a + b;
                 })).toFixed(2);
 
@@ -140,11 +140,11 @@ async function plotVotesPerCandidate(data) {
         },
         tooltips: {
           callbacks: {
-            label: function(tooltipItem, data) {
+            label: function (tooltipItem, data) {
               let label = data.datasets[0].data[tooltipItem.index];
               let percentage = (
                 (parseInt(graphVotes[tooltipItem.index]) * 100) /
-                votesArray.reduce(function(a, b) {
+                votesArray.reduce(function (a, b) {
                   return a + b;
                 })
               ).toFixed(2);
@@ -208,7 +208,7 @@ function plotUrnasApuradas(data) {
       },
       tooltips: {
         callbacks: {
-          label: function(tooltipItem, data) {
+          label: function (tooltipItem, data) {
             let label = data.datasets[0].data[tooltipItem.index];
 
             label += '%';
@@ -271,7 +271,7 @@ function generateCandTable(data) {
     currCandidateName.innerHTML = candidate.name;
     row.appendChild(currCandidateName);
 
-    
+
 
     const partyAbbrLine = document.createElement('td');
     // eslint-disable-next-line max-len
@@ -283,7 +283,7 @@ function generateCandTable(data) {
 
     let currCandidatePercentage = (
       (parseInt(candidate.votes) * 100) /
-      votesArray.reduce(function(a, b) {
+      votesArray.reduce(function (a, b) {
         return a + b;
       })
     ).toFixed(2);
@@ -303,7 +303,7 @@ function generateCandTable(data) {
     table.appendChild(row);
 
     if (candidate.status != 'Válido' &&
-    candidate.status != 'Válido (legenda)') {
+      candidate.status != 'Válido (legenda)') {
       currCandidateName.style.backgroundColor = 'rgba(255, 250, 184, 1)';
       partyAbbrLine.style.backgroundColor = 'rgba(255, 250, 184, 1)';
       currCandidateVotes.style.backgroundColor = 'rgba(255, 250, 184, 1)';
@@ -492,19 +492,19 @@ async function parseDataObject(data) {
     obj.candidates.push({});
     obj.candidates[obj.candidates.length - 1].number = String(candidate.n);
     obj.candidates[obj.candidates.length - 1].name = getCandidateByNumber(
-        String(candidate.n), obj.dadosFixos);
+      String(candidate.n), obj.dadosFixos);
     obj.candidates[obj.candidates.length - 1].partyAbbr = getPartyAbbrByNumber(
-        String(candidate.n), obj.dadosFixos);
+      String(candidate.n), obj.dadosFixos);
 
     obj.candidates[obj.candidates.length - 1].partyName = getPartyNameByNumber(
-        String(candidate.n), obj.dadosFixos);
+      String(candidate.n), obj.dadosFixos);
 
 
     obj.candidates[obj.candidates.length - 1].sqcand = getSqcandByNumber(
-        String(candidate.n), obj.dadosFixos);
+      String(candidate.n), obj.dadosFixos);
 
     obj.candidates[obj.candidates.length - 1].status = getStatusByNumber(
-        String(candidate.n), obj.dadosFixos);
+      String(candidate.n), obj.dadosFixos);
 
     // VOTOS .......
     if (String(candidate.e) == 'S') {

@@ -1,29 +1,29 @@
 /* eslint-disable no-unused-vars */
 // Data ====
 const cities = [
-  {name: 'Bom Jesus do Itabapoana', uf: 'rj'},
-  {name: 'Italva', uf: 'rj'},
-  {name: 'Itaperuna', uf: 'rj'},
-  {name: 'Laje do Muriaé', uf: 'rj'},
-  {name: 'Natividade', uf: 'rj'},
-  {name: 'Porciúncula', uf: 'rj'},
-  {name: 'Varre-Sai', uf: 'rj'},
-  {name: 'Aperibé', uf: 'rj'},
-  {name: 'Cambuci', uf: 'rj'},
-  {name: 'Itaocara', uf: 'rj'},
-  {name: 'Miracema', uf: 'rj'},
-  {name: 'Santo Antônio de Pádua', uf: 'rj'},
-  {name: 'São José de Ubá', uf: 'rj'},
-  {name: 'Rio de Janeiro', uf: 'rj'},
-  {name: 'São Paulo', uf: 'sp'},
-  {name: 'Nova Friburgo', uf: 'rj'},
-  {name: 'Cabo Frio', uf: 'rj'},
-  {name: 'Rio das Ostras', uf: 'rj'},
+  { name: 'Belém', uf: 'pa' },
+  { name: 'Bom Jesus do Itabapoana', uf: 'rj' },
+  { name: 'Italva', uf: 'rj' },
+  { name: 'Itaperuna', uf: 'rj' },
+  { name: 'Laje do Muriaé', uf: 'rj' },
+  { name: 'Natividade', uf: 'rj' },
+  { name: 'Porciúncula', uf: 'rj' },
+  { name: 'Varre-Sai', uf: 'rj' },
+  { name: 'Aperibé', uf: 'rj' },
+  { name: 'Cambuci', uf: 'rj' },
+  { name: 'Itaocara', uf: 'rj' },
+  { name: 'Miracema', uf: 'rj' },
+  { name: 'Santo Antônio de Pádua', uf: 'rj' },
+  { name: 'São José de Ubá', uf: 'rj' },
+  { name: 'Rio de Janeiro', uf: 'rj' },
+  { name: 'São Paulo', uf: 'sp' },
+  { name: 'Nova Friburgo', uf: 'rj' },
+  { name: 'Cabo Frio', uf: 'rj' },
 ].sort((a, b) => {
   const textA = a.name.toUpperCase();
   const textB = b.name.toUpperCase();
   return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-});
+})
 
 const cityDOM = document.querySelector('#city');
 const roleDOM = document.querySelector('#role');
@@ -58,8 +58,8 @@ async function changedForm() {
   Object.keys(fileCache).forEach((electionName) => {
     if (fileCache[electionName].role == getRole().toLowerCase()) {
       const thisCityElement = document.getElementById(fileCache[electionName].nl
-          .replaceAll(' ', '-')
-          .toLowerCase());
+        .replaceAll(' ', '-')
+        .toLowerCase());
       if (checkElected(fileCache[electionName]) == 'eleito') {
         thisCityElement.textContent = `${fileCache[electionName].nl} ✅`;
       } else if (

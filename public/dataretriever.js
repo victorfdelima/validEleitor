@@ -108,12 +108,15 @@ async function getFiles() {
   );
 
   for (const city of cities) {
+    let governador = await getVariableFile(city, city.uf, "governador");
     let prefeito = await getVariableFile(city, city.uf, "prefeito");
     let vereador = await getVariableFile(city, city.uf, "vereador");
 
+    governador = await parseDataObject(governador);
     prefeito = await parseDataObject(prefeito);
     vereador = await parseDataObject(vereador);
 
+    fileCache[`${city.name.toLowerCase()}_governador`] = governador;
     fileCache[`${city.name.toLowerCase()}_prefeito`] = prefeito;
     fileCache[`${city.name.toLowerCase()}_vereador`] = vereador;
 
@@ -152,6 +155,24 @@ async function getFiles() {
       notifyMatematicamente(
         "MATEMATICAMENTE ELEITO!",
         `Vereador(a) matematicamente eleito(a) em ${city.name}. Resta aguardar ainda se o TSE vai considerar eleito(a) ou não.`
+      );
+    }
+    // GOVERNADOR
+    if (
+      checkElected(governador) == "eleito" &&
+      !electedCache.includes(`${city.name.toLowerCase()}_governador`)
+    ) {
+      electedCache.push(`${city.name.toLowerCase()}_vereador`);
+      notifyElection("ELEIÇÃO!", `governador(a) eleito(a) em ${city.name}`);
+    } else if (
+      checkElected(governador) == "matematicamente" &&
+      !electedCache.includes(`${city.name.toLowerCase()}_vereador`) &&
+      !matematicamenteCache.includes(`${city.name.toLowerCase()}_governador`)
+    ) {
+      matematicamenteCache.push(`${city.name.toLowerCase()}_governador`);
+      notifyMatematicamente(
+        "MATEMATICAMENTE ELEITO!",
+        `Governador(a) matematicamente eleito(a) em ${city.name}. Resta aguardar ainda se o TSE vai considerar eleito(a) ou não.`
       );
     }
   }
@@ -319,9 +340,10 @@ async function getCityByCode(cityCode) {
   );
   const codesDBJSON = await codesDB.json();
   const DBCity = codesDBJSON.filter((elt) => elt.codigo_tse == cityCode)[0];
+  const DBUf = codesDBJSON.filter((elt) => elt.codigo_tse == cityCode)[0]
   const cityName = DBCity.nome_municipio;
-
-  return cityName;
+  const ufName = DBUf.uf
+  return cityName && ufName;
 }
 
 /**

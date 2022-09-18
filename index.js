@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const requestLimit = require('express-rate-limit');
 const fetch = require('node-fetch');
@@ -7,7 +8,6 @@ const util = require('util');
 const streamPipeline = util.promisify(require('stream').pipeline);
 
 const app = express();
-const port = 3000;
 
 app.use(express.static('public'));
 app.use(express.static('imagecache'));
@@ -22,8 +22,8 @@ const limiter = requestLimit({
 
 app.use(limiter);
 
-app.listen(port, () => {
-  console.log(`Escutando em ${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Escutando em ${process.env.PORT}`);
 });
 
 app.get('/fetchJSON/*', async (req, res) => {
@@ -51,7 +51,7 @@ app.get('/fetchImage/*', async (req, res) => {
 
   console.log('Enviando IMAGEM: ' + filename);
 
-  res.sendFile(filename, {root: __dirname});
+  res.sendFile(filename, { root: __dirname });
 });
 
 app.get('/reset', async (req, res) => {
