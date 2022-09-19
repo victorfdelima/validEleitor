@@ -24,7 +24,7 @@ const cities = [
   const textB = b.name.toUpperCase();
   return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
 })
-
+const estadoDom = document.querySelector('#estado')
 const cityDOM = document.querySelector('#city');
 const roleDOM = document.querySelector('#role');
 // const socket = io("http://localhost:3000");
@@ -39,6 +39,9 @@ function getCity() {
   return cityDOM.selectedOptions[0].value;
 }
 
+function getEstado() {
+  return estadoDom.selectedOptions[0].value;
+}
 
 /**
  * Gets the role selected in the DOM form

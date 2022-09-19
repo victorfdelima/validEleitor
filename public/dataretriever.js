@@ -19,9 +19,9 @@ document.onkeyup = function (e) {
 };
 
 const host = "https://resultados.tse.jus.br/";
-const ciclo = "oficial/ele2020";
+const ciclo = "oficial/ele2022";
 const ambiente = "oficial";
-const codigoEleicao = "426";
+const codigoEleicao = "406";
 
 /**
  * Sleeps for an specified amount of time (not executing anything).
@@ -108,18 +108,40 @@ async function getFiles() {
   );
 
   for (const city of cities) {
+    let presidente = await getVariableFile(city, city.uf, "presidente");
     let governador = await getVariableFile(city, city.uf, "governador");
     let prefeito = await getVariableFile(city, city.uf, "prefeito");
     let vereador = await getVariableFile(city, city.uf, "vereador");
 
+    presidente = await parseDataObject(presidente);
     governador = await parseDataObject(governador);
     prefeito = await parseDataObject(prefeito);
     vereador = await parseDataObject(vereador);
 
+
+    fileCache[`${city.name.toLowerCase()}_presidente`] = presidente;
     fileCache[`${city.name.toLowerCase()}_governador`] = governador;
     fileCache[`${city.name.toLowerCase()}_prefeito`] = prefeito;
     fileCache[`${city.name.toLowerCase()}_vereador`] = vereador;
 
+    // => Presidente
+    if (
+      checkElected(presidente) == "eleito" &&
+      !electedCache.includes(`${city.name.toLowerCase()}_presidente`)
+    ) {
+      electedCache.push(`${city.name.toLowerCase()}_presidente`);
+      notifyElection("ELEIÇÃO!", `Presidente(a) eleito(a) em ${city.name}`);
+    } else if (
+      checkElected(presidente) == "matematicamente" &&
+      !electedCache.includes(`${city.name.toLowerCase()}_presidente`) &&
+      !matematicamenteCache.includes(`${city.name.toLowerCase()}_presidente`)
+    ) {
+      matematicamenteCache.push(`${city.name.toLowerCase()}_presidente`);
+      notifyMatematicamente(
+        "MATEMATICAMENTE ELEITO!",
+        `Presidente(a) matematicamente eleito(a) em ${city.name}. Resta aguardar ainda se o TSE vai considerar eleito(a) ou não.`
+      );
+    }
     // => PREFEITO
     if (
       checkElected(prefeito) == "eleito" &&
