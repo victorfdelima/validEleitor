@@ -6,11 +6,11 @@ const CandiPresidente = ({ cand, loading }) => {
     }
     return (
         <div className="grupo-card">
-            <span className="title"> Presidente</span>
             {cand.map((item, index) => (
                 <div className="container">
 
                     <div className="row">
+                        <span className="title"> Presidente</span>
                         <div className="card col-lg-4">
                             <div className="flex-1 flex flex-col p-4 shadow-md rounded bg-white">
                                 <div className="font-bold mb-1 text-2xl text-ion-tertiary tracking-tight">
