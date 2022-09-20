@@ -9,6 +9,7 @@ import APIPresidenteAll from "./components/ApiPresidente";
 import BoxDate from "./components/BoxDate";
 import Header from "./components/Header";
 import FilterData from "./components/FilterData";
+import APIPresidenteAcre from "./components/ac/ApiPresidenteAC";
 export default function App() {
 
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <BoxDate />
         <Routes>
           <Route path="/" element={<APIPresidenteAll />} />
+          <Route path="/AC" element={<APIPresidenteAcre />} />
         </Routes>
       </BrowserRouter>
     </div>

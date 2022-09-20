@@ -1,11 +1,17 @@
 import React from "react"
+import { useNavigate } from "react-router-dom";
 
 const FilterData = () => {
+    const navigate = useNavigate();
+
+    function handleChange(e) {
+        navigate(`${e.target.value}`)
+    }
     return (
         <div className="containerUF">
-            <select className="optionValueUF">
-                <option>Selecione o Estado</option>
-                <option value="BRASIL">(Geral) Presidentes</option>
+            <select className="optionValueUF" onChange={handleChange}>
+                <option value="/">Selecione o Estado</option>
+                <option value="/">(Geral) Presidentes</option>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
                 <option value="AP">Amapá</option>
