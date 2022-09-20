@@ -11,7 +11,7 @@ const FilterData = () => {
     return (
 
         <div className="containerUF">
-            <div className="icon-pin"><ImLocation2 /></div>
+            <div className="icon-pin"><ImLocation2 className="ping" /></div>
             <select className="optionValueUF" onChange={handleChange}>
                 <option value="/">Selecione o Estado</option>
                 <option value="/">(Geral) Presidentes</option>
