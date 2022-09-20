@@ -18,6 +18,9 @@ const CandiPresidente = ({ cand, loading }) => {
                                     {item.pvap + "%"}
 
                                 </div>
+                                <div className="textEleitor">
+                                    {item.st}
+                                </div>
                                 <div className="text-gray-600 text-xs">
                                     <div>
                                         Votos: {item.vap.match(/((?:\d\.)?(?:\d{1,5}\.)?\d{1,5},\d{1,})|(\d)/g).join(".")}

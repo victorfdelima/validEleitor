@@ -8,15 +8,24 @@
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
+.icon-pin {
+  margin-top: 23px;
+  font-size: 27px;
+  color: white;
+  margin-left: 27rem;
+}
+
 .optionValueUF {
   color: white;
-  background-color: purple;
+  background-color: #d64ef2;
   border-radius: 20px;
   display: flex;
   align-items: center;
   align-content: center;
   margin-left: 35%;
-  margin-top: 20px;
+  margin-top: -32px;
+  font-size: 21px;
+  border: none;
 }
 
 .containerUF {
@@ -221,6 +230,18 @@
   display: flex;
   gap: 3rem;
   flex-wrap: wrap;
+}
+
+.textEleitor {
+  margin: auto;
+  font-size: 14px;
+  margin-top: -19px;
+  margin-right: 3rem;
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  block-size: 23px;
 }
 
 .grupo-card {

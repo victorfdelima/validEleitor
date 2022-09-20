@@ -1,4 +1,5 @@
 import React from "react"
+import { ImLocation2 } from "react-icons/im";
 import { useNavigate } from "react-router-dom";
 
 const FilterData = () => {
@@ -8,7 +9,9 @@ const FilterData = () => {
         navigate(`${e.target.value}`)
     }
     return (
+
         <div className="containerUF">
+            <div className="icon-pin"><ImLocation2 /></div>
             <select className="optionValueUF" onChange={handleChange}>
                 <option value="/">Selecione o Estado</option>
                 <option value="/">(Geral) Presidentes</option>
