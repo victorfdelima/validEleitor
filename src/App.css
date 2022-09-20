@@ -8,6 +8,24 @@
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
+.optionValueUF {
+  color: white;
+  background-color: purple;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-left: 45%;
+  margin-top: 20px;
+}
+
+.containerUF {
+  width: 100%;
+  block-size: 4rem;
+  border-radius: 6px;
+  background-color: #d64ef2;
+}
+
 .gap-y-3 {
   grid-row-gap: 0.75rem;
   row-gap: 0.75rem;
