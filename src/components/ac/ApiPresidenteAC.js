@@ -3,6 +3,7 @@ import "../../App.css";
 import APISenadorAC from "./ApiSenadorAC";
 import CandiPresidenteAcre from "./CandiPresidenteAcre";
 import Pagination from "../Pagination";
+import APIGovernadorAC from "./APIGovernadorAC";
 
 const APIPresidenteAcre = () => {
 
@@ -47,6 +48,9 @@ const APIPresidenteAcre = () => {
             <CandiPresidenteAcre cand={currentCands} loading={loading} />
             <Pagination candPerPage={candPerPage} totalCands={cand.length} paginate={paginate} />
             <div>
+                <div>
+                    <APIGovernadorAC />
+                </div>
                 <div>
                     <APISenadorAC />
                 </div>
