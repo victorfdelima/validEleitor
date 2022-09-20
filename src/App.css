@@ -224,7 +224,7 @@
 }
 
 .grupo-card {
-  margin-top: 19px;
+  margin-top: -2rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -284,6 +284,7 @@
 
 .titleAC {
   font-size: 20px;
+  margin-top: 5rem;
   font-weight: bold;
   display: flex;
   width: 100%;
