@@ -4,7 +4,7 @@ import Pagination from "../Pagination";
 
 const APIGovernadorAC = () => {
 
-    const BASEURLSENADORAC = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/ac/ac-c0003-e009238-r.json"
+    const BASEURLGOVERNADORAC = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/ac/ac-c0003-e009238-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -16,7 +16,7 @@ const APIGovernadorAC = () => {
     }, []);
     const getUserGovernadorAC = async () => {
         const api_response = await fetch(
-            `${BASEURLSENADORAC}`,
+            `${BASEURLGOVERNADORAC}`,
             {
                 method: "GET",
                 headers: {
@@ -26,7 +26,6 @@ const APIGovernadorAC = () => {
         );
         const cand = await api_response.json();
         setCand(cand.cand);
-        console.log('testedeSenador', cand.cand)
         setLoading(false)
     };
 

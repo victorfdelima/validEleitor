@@ -45,17 +45,17 @@ const APIPresidenteAcre = () => {
 
     return (
         <div>
-            Presidentes
+            <span className="titleAC">Presidentes</span>
             <CandiPresidenteAcre cand={currentCands} loading={loading} />
             <Pagination candPerPage={candPerPage} totalCands={cand.length} paginate={paginate} />
             <div>
                 <div>
-                    Governadores
-                    <APIGovernadorAC />
+                    <span className="titleAC">Governadores</span>
+                    <APIGovernadorAC cand={currentCands} loading={loading} />
                 </div>
                 <div>
-                    Senadores
-                    <APISenadorAC />
+                    <span className="titleAC">Senadores</span>
+                    <APISenadorAC cand={currentCands} loading={loading} />
                 </div>
             </div>
         </div>
