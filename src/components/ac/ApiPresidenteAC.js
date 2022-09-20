@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
+import APISenadorAC from "./ApiSenadorAC";
 import CandiPresidenteAcre from "./CandiPresidenteAcre";
 import Pagination from "../Pagination";
 
@@ -45,6 +46,11 @@ const APIPresidenteAcre = () => {
         <div>
             <CandiPresidenteAcre cand={currentCands} loading={loading} />
             <Pagination candPerPage={candPerPage} totalCands={cand.length} paginate={paginate} />
+            <div>
+                <div>
+                    <APISenadorAC />
+                </div>
+            </div>
         </div>
     );
 }

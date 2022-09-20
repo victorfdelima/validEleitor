@@ -1,4 +1,5 @@
 import React from 'react'
+import APISenadorAC from './ApiSenadorAC'
 
 const CandiPresidenteAcre = ({ cand, loading }) => {
     if (loading) {
@@ -35,6 +36,8 @@ const CandiPresidenteAcre = ({ cand, loading }) => {
 
                 </div>
             ))}
+            <div>
+            </div>
         </div>
     )
 }

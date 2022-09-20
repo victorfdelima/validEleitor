@@ -6,7 +6,6 @@ const BoxDate = () => {
     const [boxHora, setBoxHora] = useState([]);
 
 
-    require('dotenv').config()
     useEffect(() => {
         getUserPresidenteAll();
     }, []);
@@ -22,8 +21,6 @@ const BoxDate = () => {
         );
         const boxHora = await api_response.json();
         setBoxHora(boxHora);
-        console.log(boxHora.psnt, 'teste')
-
 
 
     };
