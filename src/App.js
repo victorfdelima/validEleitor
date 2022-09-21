@@ -20,6 +20,7 @@ import APIPresidenteESanto from "./components/es/ApiPresidenteES";
 import APIPresidenteGoias from "./components/go/ApiPresidenteGO";
 import APIPresidenteMA from "./components/ma/ApiPresidenteMA";
 import APIPresidenteMT from "./components/mt/ApiPresidenteMT";
+import APIPresidenteMS from "./components/ms/ApiPresidenteMS";
 export default function App() {
 
   return (
@@ -40,7 +41,8 @@ export default function App() {
           <Route path="/ES" element={<APIPresidenteESanto />} />
           <Route path="/GO" element={<APIPresidenteGoias />} />
           <Route path="/MA" element={<APIPresidenteMA/>}/>
-          <Route path="/MT" element={<APIPresidenteMT/>}/>        
+          <Route path="/MT" element={<APIPresidenteMT/>}/> 
+          <Route path="/MS" element={<APIPresidenteMS/>}/> 
         </Routes>
       </BrowserRouter>
     </div>
