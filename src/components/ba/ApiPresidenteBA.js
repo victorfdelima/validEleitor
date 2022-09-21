@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
-import APISenadorAM from "./ApiSenadorAM";
+import APISenadorBA from "./ApiSenadorBA";
 import CandiPresidenteBahia from "./CandiPresidenteBahia";
 import Pagination from "../Pagination";
 import APIGovernadorBA from "./APIGovernadorBA";
