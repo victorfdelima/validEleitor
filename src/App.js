@@ -21,6 +21,22 @@ import APIPresidenteGoias from "./components/go/ApiPresidenteGO";
 import APIPresidenteMA from "./components/ma/ApiPresidenteMA";
 import APIPresidenteMT from "./components/mt/ApiPresidenteMT";
 import APIPresidenteMS from "./components/ms/ApiPresidenteMS";
+import APIPresidenteMG from "./components/mg/ApiPresidenteMG"
+import APIPresidente from "./components/pa/ApiPresidente";
+import APIPresidentePB from "./components/pb/ApiPresidente";
+import APIPresidentePR from "./components/pr/ApiPresidente";
+import APIPresidentePE from "./components/pe/ApiPresidente";
+import APIPresidentePI from "./components/pi/ApiPresidente";
+import APIPresidenteRJ from "./components/rj/ApiPresidente";
+import APIPresidenteRO from "./components/ro/ApiPresidente";
+import APIPresidenteRN from "./components/rn/ApiPresidente";
+import APIPresidenteRR from "./components/rr/ApiPresidente";
+import APIPresidenteRS from "./components/rs/ApiPresidente";
+import APIPresidenteSC from "./components/sc/ApiPresidente";
+import APIPresidenteSE from "./components/se/ApiPresidente";
+import APIPresidenteSP from "./components/sp/ApiPresidente";
+import APIPresidenteTO from "./components/to/ApiPresidente";
+
 export default function App() {
 
   return (
@@ -42,7 +58,23 @@ export default function App() {
           <Route path="/GO" element={<APIPresidenteGoias />} />
           <Route path="/MA" element={<APIPresidenteMA/>}/>
           <Route path="/MT" element={<APIPresidenteMT/>}/> 
-          <Route path="/MS" element={<APIPresidenteMS/>}/> 
+          <Route path="/MS" element={<APIPresidenteMS/>}/>
+          <Route path="/MG" element={<APIPresidenteMG/>}/> 
+          <Route path="/PA" element={<APIPresidente/>}/> 
+          <Route path="/PB" element={<APIPresidentePB/>}/> 
+          <Route path="/PR" element={<APIPresidentePR />} />
+          <Route path="/PE" element={<APIPresidentePE />} />
+          <Route path="/PI" element={<APIPresidentePI />} />
+          <Route path="/RJ" element={<APIPresidenteRJ />} />
+          <Route path="/RO" element={<APIPresidenteRO />} />
+          <Route path="/RN" element={<APIPresidenteRN />} />
+          <Route path="/RR" element={<APIPresidenteRR/>}/>
+          <Route path="/RS" element={<APIPresidenteRS/>}/> 
+          <Route path="/SC" element={<APIPresidenteSC/>}/>
+          <Route path="/SE" element={<APIPresidenteSE/>}/> 
+          <Route path="/SP" element={<APIPresidenteSP/>}/> 
+          <Route path="/TO" element={<APIPresidenteTO/>}/> 
+
         </Routes>
       </BrowserRouter>
     </div>
