@@ -19,7 +19,7 @@ const BoxDate = () => {
                 }
             }
         );
-        api_response.setHeader('cache-control', 's-maxage=10, stale-while-revalidate');
+
 
         const boxHora = await api_response.json();
         setBoxHora(boxHora);

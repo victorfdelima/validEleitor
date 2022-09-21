@@ -23,7 +23,7 @@ const APIDeputadoFAC = () => {
                 }
             }
         );
-        api_response.setHeader('cache-control', 's-maxage=10, stale-while-revalidate');
+
 
         const cand = await api_response.json();
 
