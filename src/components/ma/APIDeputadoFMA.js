@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
-import Pagination from "../Pagination";
+import FilterData from "../FilterData";
 
-const APISenadorGO = () => {
+const filterData = FilterData()
+console.log('filtrodata', filterData)
 
-    const BASEURLSENADORGO = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/go/go-c0005-e009238-r.json"
+const APIDeputadoFMA = () => {
+
+    const BASEURLDeputadoFMA = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/ma/ma-c0006-e009238-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -12,11 +15,11 @@ const APISenadorGO = () => {
 
 
     useEffect(() => {
-        getUserSenadorGO();
+        getUserDeputadoFMA();
     }, []);
-    const getUserSenadorGO = async () => {
+    const getUserDeputadoFMA = async () => {
         const api_response = await fetch(
-            `${BASEURLSENADORGO}`,
+            `${BASEURLDeputadoFMA}`,
             {
                 method: "GET",
                 headers: {
@@ -28,6 +31,7 @@ const APISenadorGO = () => {
 
 
         const cand = await api_response.json();
+
         setCand(cand.cand);
         console.log('testedeSenador', cand.cand)
         setLoading(false)
@@ -46,7 +50,7 @@ const APISenadorGO = () => {
         return <h2>Loading...</h2>
     }
     return (
-        <div>
+        <div className="overflow-y-auto scrolling-touch cargo-h-scroll">
             <div className="grupo-card">
                 {cand.map((item, index) => (
                     <div className="container">
@@ -81,9 +85,7 @@ const APISenadorGO = () => {
                 <div>
                 </div>
 
-            </div>
-            <Pagination candPerPage={candPerPage} totalCands={cand.length} paginate={paginate} />
-        </div>
+            </div>        </div>
     );
 }
-export default APISenadorGO
+export default APIDeputadoFMA

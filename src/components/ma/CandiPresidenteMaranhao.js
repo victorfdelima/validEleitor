@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CandiPresidenteGoias = ({ cand, loading }) => {
+const CandiPresidenteMaranhao = ({ cand, loading }) => {
     if (loading) {
         return <h2>Loading...</h2>
     }
@@ -43,4 +43,4 @@ const CandiPresidenteGoias = ({ cand, loading }) => {
         </div>
     )
 }
-export default CandiPresidenteGoias
+export default CandiPresidenteMaranhao

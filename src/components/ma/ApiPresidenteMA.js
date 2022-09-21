@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
-import APISenadorGO from "./ApiSenadorGO";
-import CandiPresidenteGoias from "./CandiPresidenteGoias";
+import APISenadorMA from "./ApiSenadorMA";
+import CandiPresidenteMaranhao from "./CandiPresidenteMaranhao";
 import Pagination from "../Pagination";
-import APIGovernadorGO from "./APIGovernadorGO";
-import APIDeputadoFGO from "./APIDeputadoFGO";
-import APIDeputadoEGO from "./APIDeputadoEGO";
+import APIGovernadorMA from "./APIGovernadorMA";
+import APIDeputadoFMA from "./APIDeputadoFMA";
+import APIDeputadoEMA from "./APIDeputadoEMA";
 
-const APIPresidenteGoias = () => {
+const APIPresidenteMaranhao = () => {
 
-    const BASEURLPRESIDENTE = "https://resultados-sim.tse.jus.br/teste/ele2022/9240/dados-simplificados/go/go-c0001-e009240-r.json"
+    const BASEURLPRESIDENTE = "https://resultados-sim.tse.jus.br/teste/ele2022/9240/dados-simplificados/ma/ma-c0001-e009240-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -17,9 +17,9 @@ const APIPresidenteGoias = () => {
 
 
     useEffect(() => {
-        getUserPresidenteESanto();
+        getUserPresidenteMaranhao();
     }, []);
-    const getUserPresidenteESanto = async () => {
+    const getUserPresidenteMaranhao = async () => {
         const api_response = await fetch(
             `${BASEURLPRESIDENTE}`,
             {
@@ -51,27 +51,27 @@ const APIPresidenteGoias = () => {
     return (
         <div>
             <span className="titleAC">Presidentes</span>
-            <CandiPresidenteGoias cand={currentCands} loading={loading} />
+            <CandiPresidenteMaranhao cand={currentCands} loading={loading} />
             <Pagination candPerPage={candPerPage} totalCands={cand.length} paginate={paginate} />
             <div>
                 <div>
                     <span className="titleAC">Governadores</span>
-                    <APIGovernadorGO cand={currentCands} loading={loading} />
+                    <APIGovernadorMA cand={currentCands} loading={loading} />
                 </div>
                 <div>
                     <span className="titleAC">Senadores</span>
-                    <APISenadorGO cand={currentCands} loading={loading} />
+                    <APISenadorMA cand={currentCands} loading={loading} />
                 </div>
                 <div className="flex flex-row mt-4">
                     <div className="flex-1">
                         <span className="titleAC">Deputados Federais</span>
-                        <APIDeputadoFGO />
+                        <APIDeputadoFMA />
                     </div>
                 </div>
                 <div className="flex flex-row mt-4">
                     <div className="flex-1 ml-2">
                         <span className="titleAC">Deputados Estaduais</span>
-                        <APIDeputadoEES />
+                        <APIDeputadoEMA />
                     </div>
                 </div>
             </div>
@@ -81,4 +81,4 @@ const APIPresidenteGoias = () => {
         </div>
     );
 }
-export default APIPresidenteGoias
+export default APIPresidenteMaranhao

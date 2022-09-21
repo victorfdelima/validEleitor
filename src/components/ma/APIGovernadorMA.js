@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "../../App.css";
 import Pagination from "../Pagination";
 
-const APIGovernadorGO = () => {
+const APIGovernadorMA = () => {
 
-    const BASEURLGOVERNADORGO = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/go/go-c0003-e009238-r.json"
+    const BASEURLGOVERNADORMA = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/ma/ma-c0003-e009238-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -12,9 +12,9 @@ const APIGovernadorGO = () => {
 
 
     useEffect(() => {
-        getUserGovernadorGO();
+        getUserGovernadorMA();
     }, []);
-    const getUserGovernadorGO = async () => {
+    const getUserGovernadorMA = async () => {
         const api_response = await fetch(
             `${BASEURLGOVERNADORGO}`,
             {
@@ -84,4 +84,4 @@ const APIGovernadorGO = () => {
         </div>
     );
 }
-export default APIGovernadorGO
+export default APIGovernadorMA

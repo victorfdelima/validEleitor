@@ -18,6 +18,7 @@ import APIPresidenteCeara from "./components/ce/ApiPresidenteCE"
 import APIPresidenteDistrito from "./components/df/ApiPresidenteDF"
 import APIPresidenteESanto from "./components/es copy/ApiPresidenteES";
 import APIPresidenteGoias from "./components/go copy/ApiPresidenteGO";
+import APIPresidenteMaranhao from "./components/ma/ApiPresidenteMA";
 export default function App() {
 
   return (
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="/CE" element={<APIPresidenteCeara />} />
           <Route path="/ES" element={<APIPresidenteESanto />} />
           <Route path="/GO" element={<APIPresidenteGoias />} />
+          <Route path="/MA" element={<APIPresidenteMaranhao />} />
         </Routes>
       </BrowserRouter>
     </div>
