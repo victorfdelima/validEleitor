@@ -16,7 +16,7 @@ const APIGovernadorMA = () => {
     }, []);
     const getUserGovernadorMA = async () => {
         const api_response = await fetch(
-            `${BASEURLGOVERNADORGO}`,
+            `${BASEURLGOVERNADORMA}`,
             {
                 method: "GET",
                 headers: {

@@ -71,7 +71,7 @@ const APIPresidenteGoias = () => {
                 <div className="flex flex-row mt-4">
                     <div className="flex-1 ml-2">
                         <span className="titleAC">Deputados Estaduais</span>
-                        <APIDeputadoEES />
+                        <APIDeputadoEGO />
                     </div>
                 </div>
             </div>

@@ -16,8 +16,8 @@ import APIPresidenteAmazonas from "./components/am/ApiPresidenteAM";
 import APIPresidenteBA from "./components/ba/ApiPresidenteBA"
 import APIPresidenteCeara from "./components/ce/ApiPresidenteCE"
 import APIPresidenteDistrito from "./components/df/ApiPresidenteDF"
-import APIPresidenteESanto from "./components/es copy/ApiPresidenteES";
-import APIPresidenteGoias from "./components/go copy/ApiPresidenteGO";
+import APIPresidenteESanto from "./components/es/ApiPresidenteES";
+import APIPresidenteGoias from "./components/go/ApiPresidenteGO";
 import APIPresidenteMaranhao from "./components/ma/ApiPresidenteMA";
 export default function App() {
 
@@ -35,6 +35,7 @@ export default function App() {
           <Route path="/AM" element={<APIPresidenteAmazonas />} />
           <Route path="/BA" element={<APIPresidenteBA />} />
           <Route path="/CE" element={<APIPresidenteCeara />} />
+          <Route path="/DF" element={<APIPresidenteDistrito />} />
           <Route path="/ES" element={<APIPresidenteESanto />} />
           <Route path="/GO" element={<APIPresidenteGoias />} />
           <Route path="/MA" element={<APIPresidenteMaranhao />} />
