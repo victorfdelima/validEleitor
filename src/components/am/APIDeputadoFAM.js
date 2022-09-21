@@ -3,7 +3,7 @@ import "../../App.css";
 
 const APIDeputadoFAM = () => {
 
-    const BASEURLDeputadoFAM = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/ap/ap-c0006-e009238-r.json"
+    const BASEURLDeputadoFAM = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/am/am-c0006-e009238-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
