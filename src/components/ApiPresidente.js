@@ -12,7 +12,6 @@ const APIPresidenteAll = () => {
     const [candPerPage] = useState(8)
 
 
-    require('dotenv').config()
     useEffect(() => {
         getUserPresidenteAll();
     }, []);
