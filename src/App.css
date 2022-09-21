@@ -9,7 +9,15 @@
 }
 
 .footer-dados {
-  margin-top: 20px;
+  margin-top: 9rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 .icon-pin {
@@ -39,8 +47,8 @@
 }
 
 .flex-row {
-  width: 42rem;
-  flex-direction: row;
+  width: 100%;
+  flex-direction: column;
 }
 
 .flex {

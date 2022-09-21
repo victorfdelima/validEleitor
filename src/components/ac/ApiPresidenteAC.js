@@ -5,6 +5,7 @@ import CandiPresidenteAcre from "./CandiPresidenteAcre";
 import Pagination from "../Pagination";
 import APIGovernadorAC from "./APIGovernadorAC";
 import APIDeputadoFAC from "./APIDeputadoFAC";
+import APIDeputadoEAC from "./APIDeputadoEAC";
 
 const APIPresidenteAcre = () => {
 
@@ -62,6 +63,12 @@ const APIPresidenteAcre = () => {
                     <div className="flex-1">
                         <span className="titleAC">Deputados Federais</span>
                         <APIDeputadoFAC />
+                    </div>
+                </div>
+                <div className="flex flex-row mt-4">
+                    <div className="flex-1 ml-2">
+                        <span className="titleAC">Deputados Estaduais</span>
+                        <APIDeputadoEAC />
                     </div>
                 </div>
             </div>
