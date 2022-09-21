@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
 
-const APIDeputadoEGO = () => {
+const APIDeputadoEMA = () => {
     
 
-    const BASEURLDeputadoEGO = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/go/go-c0007-e009238-r.json"
+    const BASEURLDeputadoEMA = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/ma/ma-c0007-e009238-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -12,11 +12,11 @@ const APIDeputadoEGO = () => {
 
 
     useEffect(() => {
-        getUserDeputadoEGO();
+        getUserDeputadoEMA();
     }, []);
-    const getUserDeputadoEGO = async () => {
+    const getUserDeputadoEMA = async () => {
         const api_response = await fetch(
-            `${BASEURLDeputadoEGO}`,
+            `${BASEURLDeputadoEMA}`,
             {
                 method: "GET",
                 headers: {
@@ -82,4 +82,4 @@ const APIDeputadoEGO = () => {
             </div>        </div>
     );
 }
-export default APIDeputadoEGO
+export default APIDeputadoEMA

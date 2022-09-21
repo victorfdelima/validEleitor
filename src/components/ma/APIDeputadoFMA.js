@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
 
-const APIDeputadoEGO = () => {
-    
+const APIDeputadoFMA = () => {
 
-    const BASEURLDeputadoEGO = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/go/go-c0007-e009238-r.json"
+    const BASEURLDeputadoFMA = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/ma/ma-c0006-e009238-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -12,20 +11,23 @@ const APIDeputadoEGO = () => {
 
 
     useEffect(() => {
-        getUserDeputadoEGO();
+        getUserDeputadoFMA();
     }, []);
-    const getUserDeputadoEGO = async () => {
+    const getUserDeputadoFMA = async () => {
         const api_response = await fetch(
-            `${BASEURLDeputadoEGO}`,
+            `${BASEURLDeputadoFMA}`,
             {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
-                    "cache-control": "s-maxage=10, stale-while-revalidate",
+                    "cache-control": "s-maxage=10, stale-while-revalidate"
                 }
             }
         );
+
+
         const cand = await api_response.json();
+
         setCand(cand.cand);
         console.log('testedeSenador', cand.cand)
         setLoading(false)
@@ -82,4 +84,4 @@ const APIDeputadoEGO = () => {
             </div>        </div>
     );
 }
-export default APIDeputadoEGO
+export default APIDeputadoFMA
