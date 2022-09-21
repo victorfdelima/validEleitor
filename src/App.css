@@ -8,6 +8,10 @@
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
+.footer-dados {
+  margin-top: 20px;
+}
+
 .icon-pin {
   margin-top: 23px;
   font-size: 27px;
@@ -16,6 +20,39 @@
 
 .ping {
   margin-left: 17.7rem;
+}
+
+.overflow {
+  overflow: visible auto;
+}
+
+.scrolling-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-row {
+  width: 42rem;
+  flex-direction: row;
+}
+
+.flex {
+  display: flex;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.cargo-h-scroll {
+  height: calc(100vh - 235px);
 }
 
 .optionValueUF {

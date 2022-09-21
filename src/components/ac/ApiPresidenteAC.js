@@ -4,6 +4,7 @@ import APISenadorAC from "./ApiSenadorAC";
 import CandiPresidenteAcre from "./CandiPresidenteAcre";
 import Pagination from "../Pagination";
 import APIGovernadorAC from "./APIGovernadorAC";
+import APIDeputadoFAC from "./APIDeputadoFAC";
 
 const APIPresidenteAcre = () => {
 
@@ -57,6 +58,15 @@ const APIPresidenteAcre = () => {
                     <span className="titleAC">Senadores</span>
                     <APISenadorAC cand={currentCands} loading={loading} />
                 </div>
+                <div className="flex flex-row mt-4">
+                    <div className="flex-1">
+                        <span className="titleAC">Deputados Federais</span>
+                        <APIDeputadoFAC />
+                    </div>
+                </div>
+            </div>
+            <div className="footer-dados">
+
             </div>
         </div>
     );
