@@ -14,6 +14,7 @@ import APIPresidenteAlagoas from "./components/al/ApiPresidenteAL";
 import APIPresidenteAmapa from "./components/ap/ApiPresidenteAP";
 import APIPresidenteAmazonas from "./components/am/ApiPresidenteAM";
 import APIPresidenteBA from "./components/ba/ApiPresidenteBA"
+import APIPresidenteCeara from "./components/ce/ApiPresidenteCE"
 export default function App() {
 
   return (
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/AP" element={<APIPresidenteAmapa />} />
           <Route path="/AM" element={<APIPresidenteAmazonas />} />
           <Route path="/BA" element={<APIPresidenteBA />} />
+          <Route path="/CE" element={<APIPresidenteCeara />} />
         </Routes>
       </BrowserRouter>
     </div>
