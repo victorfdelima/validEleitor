@@ -32,11 +32,13 @@ const BoxDate = () => {
             <div className="container-data">
                 <div className="container-texto">
                     <div className="xs:text-lg font-bold tam-fonte">
-                        {boxHora.pst}% das seções totalizadas
+                        {boxHora.pst}% das urnas apuradas
                         <br />
-                        <span className="text-roxo text-xs font-bold">(Horario Local)</span>
+                        <progress value="80" max="100"></progress>
                         <br />
-                        <span className="text-roxo text-xs font-bold">Última atualização {boxHora.dg}  {boxHora.hg}</span>
+                        <span className="text-ultima-atualizacao">Última atualização {boxHora.dg}  {boxHora.hg}</span>
+                        <br />
+                        <span className="text-horario">(Horario Local)</span>
                         <button onClick={() => window.location.reload(false)} className="button-refresh">Atualizar</button>
                     </div>
                     <div className="mt-2 md:mt-3 bg-gray-400 rounded-2xs overflow-hidden">
