@@ -9,8 +9,6 @@ const APIDeputadoFAC = () => {
     const [currentPage, setCurrentPage] = useState(1)
        const [candPerPage] = useState(8)
     const [search, setSearch] = useState('');
-    const [search, setSearch] = useState('');
-
 
     useEffect(() => {
         getUserDeputadoFAC();
