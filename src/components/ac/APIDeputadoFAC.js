@@ -7,7 +7,8 @@ const APIDeputadoFAC = () => {
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
-    const [candPerPage] = useState(8)
+       const [candPerPage] = useState(8)
+    const [search, setSearch] = useState('');
     const [search, setSearch] = useState('');
 
 
@@ -61,11 +62,11 @@ const APIDeputadoFAC = () => {
         return <h2>Loading...</h2>
     }
     return (
-        <div className="overflow-y-auto scrolling-touch cargo-h-scroll">
-                                       <input
+                <div className="overflow-y-auto scrolling-touch cargo-h-scroll">
+                                                   <input
                 className="inputbuscaDepE"
                     type="text"
-                    placeholder="Procure por um deputado Estadual"
+                    placeholder="Procure por um deputado"
                     onChange={(event) => setSearch(event.target.value)}
                     />
             <div className="grupo-card">

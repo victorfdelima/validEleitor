@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import "../../App.css";
 
 const APIDeputadoFMA = () => {
@@ -7,7 +7,8 @@ const APIDeputadoFMA = () => {
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
-    const [candPerPage] = useState(8)
+       const [candPerPage] = useState(8)
+    const [search, setSearch] = useState('');
 
 
     useEffect(() => {
@@ -35,9 +36,28 @@ const APIDeputadoFMA = () => {
 
     // Current dados
 
-    const indexOfLastCand = currentPage * candPerPage;
-    const indexOfFirstCand = indexOfLastCand - candPerPage;
-    const currentCands = cand.slice(indexOfFirstCand, indexOfLastCand)
+  const indexOfLastCand = useMemo(
+    () => currentPage * candPerPage,
+    [currentPage, candPerPage],
+  );
+  const indexOfFirstCand = useMemo(
+    () => indexOfLastCand - candPerPage,
+    [indexOfLastCand, candPerPage],
+  );
+  const currentCand = useMemo(
+    () => cand.slice(indexOfFirstCand, indexOfLastCand),
+    [cand, indexOfFirstCand, indexOfLastCand],
+  );
+
+  const filteredCands = useMemo(() => {
+    if (!search) return cand;
+
+    return cand.filter(
+      (cand) =>
+        cand.st.toLowerCase().startsWith(search.toLowerCase()) ||
+        cand.nm.toLowerCase().includes(search.toLowerCase()),
+    );
+  }, [cand, search]);
 
     //Current Page
 
@@ -46,9 +66,15 @@ const APIDeputadoFMA = () => {
         return <h2>Loading...</h2>
     }
     return (
-        <div className="overflow-y-auto scrolling-touch cargo-h-scroll">
+                <div className="overflow-y-auto scrolling-touch cargo-h-scroll">
+                                                   <input
+                className="inputbuscaDepE"
+                    type="text"
+                    placeholder="Procure por um deputado"
+                    onChange={(event) => setSearch(event.target.value)}
+                    />
             <div className="grupo-card">
-                {cand.map((item, index) => (
+                {filteredCands.map((item, index) => (
                     <div className="container">
                         <div className="row">
                             <div className="card col-lg-4">
