@@ -7,7 +7,7 @@ import APIGovernadorAC from "./APIGovernadorAC";
 import APIDeputadoFAC from "./APIDeputadoFAC";
 import APIDeputadoEAC from "./APIDeputadoEAC";
 
-const APIPresidenteAcre = () => {
+const APIPresidenteAcre = ({filtro}) => {
 
     const BASEURLPRESIDENTE = "https://resultados-sim.tse.jus.br/teste/ele2022/9240/dados-simplificados/ac/ac-c0001-e009240-r.json"
     const [cand, setCand] = useState([]);
@@ -67,6 +67,8 @@ const APIPresidenteAcre = () => {
                         <span className="titleAC">Deputados Federais</span>
                         <APIDeputadoFAC />
                     </div>
+                </div>
+                <div>
                 </div>
                 <div className="flex flex-row mt-4">
                     <div className="flex-1 ml-2">

@@ -7,7 +7,19 @@
 .grid-cols-4 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
-
+.inputbuscaDepE{
+  width: 14rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  margin-top: 2rem;
+  margin-left: 19rem;
+  border-radius: 20px;
+  margin-bottom: 2.3rem;
+  border: none;
+}
 .footer-dados {
   margin-top: 9rem;
 }
