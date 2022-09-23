@@ -46,6 +46,7 @@ const APIPresidenteBahia = () => {
 
     //Current Page
 
+    
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (

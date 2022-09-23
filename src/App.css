@@ -7,6 +7,10 @@
 .grid-cols-4 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
+.imagem-candi{
+  width: 49px;
+  border-radius: 16px;
+}
 .inputbuscaDepE{
   width: 14rem;
   display: flex;

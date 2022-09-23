@@ -46,6 +46,7 @@ const APIPresidenteAmapa = () => {
 
     //Current Page
 
+    
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (

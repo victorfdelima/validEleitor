@@ -46,6 +46,7 @@ const APIPresidenteMG = () => {
 
     //Current Page
 
+    
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (

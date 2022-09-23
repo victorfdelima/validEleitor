@@ -15,7 +15,7 @@ const APIPresidenteAcre = ({filtro}) => {
     const [currentPage, setCurrentPage] = useState(1)
     const [candPerPage] = useState(8)
 
-
+    
     useEffect(() => {
         getUserPresidenteACRE();
     }, []);
@@ -38,6 +38,7 @@ const APIPresidenteAcre = ({filtro}) => {
         setLoading(false)
     };
 
+
     // Current dados
 
     const indexOfLastCand = currentPage * candPerPage;
@@ -46,6 +47,7 @@ const APIPresidenteAcre = ({filtro}) => {
 
     //Current Page
 
+    
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
