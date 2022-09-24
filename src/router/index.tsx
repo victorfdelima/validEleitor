@@ -28,12 +28,16 @@ function Route({
     return <Navigate to='/login' />;
   }
 
-  if (!isAuthenticated() && path === '/login') {
+  if (!isAuthenticated() && path !== '/login') {
     return <Navigate to='/login' />;
   }
 
   if (isAuthenticated() && path === '/') {
     return <Navigate to={DefaultRoute} />;
+  }
+
+  if (Layout === React.Fragment) {
+    return <Component />;
   }
 
   return (

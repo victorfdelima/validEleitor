@@ -39,7 +39,7 @@ const round = keyframes`
 `;
 
 export const Container = styled.div<ContainerProps>`
-  color: ${({ theme }) => theme.colors.primary.main};
+  color: ${({ theme }) => theme.colors.dark};
   font-size: ${(props) => `${props.size}px`};
   width: 1em;
   height: 1em;
