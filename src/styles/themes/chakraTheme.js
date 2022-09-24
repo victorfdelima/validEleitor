@@ -10,6 +10,8 @@ export const chakraTheme = extendTheme({
     bodyColor: '#fff',
     primary: '#868686',
     middleGray: '#3a3e42',
+    textLight: '#D0D2D6',
+    text: '#b4b7bd'
   },
   styles: {
     global: (props) => ({

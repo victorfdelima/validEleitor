@@ -9,6 +9,7 @@ interface Route {
   layout?: any;
   hasSidebar?: boolean;
   isPrivate?: boolean;
+  hideHeader?: boolean;
 }
 
 export const routes: Route[] = [

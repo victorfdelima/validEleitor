@@ -1,3 +1,4 @@
+import { Flex } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 import {
   BrowserRouter,
@@ -10,10 +11,15 @@ import { isAuthenticated } from '../services/auth';
 import { DefaultRoute, routes } from './routes';
 
 interface RouteProps {
-  layout: React.FC<{ children?: React.ReactNode; hasSidebar?: boolean }>;
+  layout: React.FC<{
+    children?: React.ReactNode;
+    hasSidebar?: boolean;
+    hideHeader?: boolean;
+  }>;
   component: React.FC<{ children?: React.ReactNode }>;
   hasSidebar?: boolean;
   isPrivate?: boolean;
+  hideHeader?: boolean;
   path: string;
 }
 
@@ -23,6 +29,7 @@ function Route({
   path,
   hasSidebar = false,
   isPrivate = false,
+  hideHeader = false,
 }: RouteProps) {
   if ((!isAuthenticated() && isPrivate) || !path) {
     return <Navigate to='/login' />;
@@ -37,11 +44,15 @@ function Route({
   }
 
   if (Layout === React.Fragment) {
-    return <Component />;
+    return (
+      <Flex minH='100vh'>
+        <Component />
+      </Flex>
+    );
   }
 
   return (
-    <Layout hasSidebar={hasSidebar}>
+    <Layout hasSidebar={hasSidebar} hideHeader={hideHeader}>
       <Component />
     </Layout>
   );
