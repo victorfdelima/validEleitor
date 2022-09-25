@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "author": "Victor Ferreira de Lima",
+  "proxy": "https://app.resultadoeleicoes2022.com.br/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.1",
+    "cors": "^2.8.5",
     "nth-check": "^2.1.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
