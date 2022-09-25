@@ -19,6 +19,7 @@ const APIPresidenteAll = () => {
         const api_response = await fetch(
             `${BASEURLPRESIDENTE}`,
             {
+                mode: "no-cors",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
