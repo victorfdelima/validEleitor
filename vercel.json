@@ -1,8 +1,7 @@
 {
-  "proxy": "https://resultados.tse.jus.br/oficial/ele2022/",
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "https://resultados.tse.jus.br/oficial/ele2022/(.*)",
       "headers": [
         {
           "key": "access-control-allow-origin",
