@@ -33,7 +33,7 @@ const CandiPresidente = ({ cand, loading }) => {
                                     </div>
                                 </div>
                                 <div className="ccN">
-                                    {item.cc.replace(" - Federação Brasil da Esperança - FE BRASIL (PT/PC do B/PV) / SOLIDARIEDADE / Federação PSOL REDE (PSOL/REDE) / PSB / AGIR / AVANTE / PROS","")}-{item.n}
+                                    Vice: {item.nv}
                                 </div>
                                 <div className="font-bold candidato tracking-tight">
                                     {item.nm.replace("&apos;", "'")}
