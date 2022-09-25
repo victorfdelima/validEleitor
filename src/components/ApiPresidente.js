@@ -17,7 +17,7 @@ const APIPresidenteAll = () => {
     }, []);
     const getUserPresidenteAll = async () => {
         const api_response = await fetch(
-            `${BASEURLPRESIDENTE}`,
+            `https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json`,
             {
                 method: "GET",
                 headers: {
@@ -30,7 +30,6 @@ const APIPresidenteAll = () => {
 
 
         const cand = await api_response.json();
-        console.log('testeprod', cand.cand)
         setCand(cand.cand);
 
         setLoading(false)
