@@ -194,7 +194,8 @@
 }
 
 .text-2xl {
-  font-size: 1.375rem;
+
+  font-size: small;
 }
 
 .container-date-grande {
