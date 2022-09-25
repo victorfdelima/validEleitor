@@ -3,7 +3,7 @@ import "../../App.css";
 
 const APIDeputadoFMG = () => {
 
-    const BASEURLDeputadoFMG = "546/dados-simplificados/mg/mg-c0006-e00546-r.json"
+    const BASEURLDeputadoFMG = "546/dados-simplificados/mg/mg-c0006-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

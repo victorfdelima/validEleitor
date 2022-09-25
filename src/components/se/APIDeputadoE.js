@@ -4,7 +4,7 @@ import "../../App.css";
 const APIDeputadoE = () => {
     
 
-    const BASEURLDeputadoE = "546/dados-simplificados/se/se-c0007-e00546-r.json"
+    const BASEURLDeputadoE = "546/dados-simplificados/se/se-c0007-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

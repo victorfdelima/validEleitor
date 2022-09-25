@@ -3,7 +3,7 @@ import "../../App.css";
 
 const APIDeputadoEAP = () => {
 
-    const BASEURLDeputadoEAP = "546/dados-simplificados/ap/ap-c0007-e00546-r.json"
+    const BASEURLDeputadoEAP = "546/dados-simplificados/ap/ap-c0007-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

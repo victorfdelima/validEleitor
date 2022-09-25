@@ -4,7 +4,7 @@ import Pagination from "../Pagination";
 
 const APISenadorDF = () => {
 
-    const BASEURLSENADORDF = "546/dados-simplificados/df/df-c0005-e00546-r.json"
+    const BASEURLSENADORDF = "546/dados-simplificados/df/df-c0005-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

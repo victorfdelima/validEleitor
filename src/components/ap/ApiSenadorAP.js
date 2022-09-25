@@ -4,7 +4,7 @@ import Pagination from "../Pagination";
 
 const APISenadorAP = () => {
 
-    const BASEURLSENADORAP = "546/dados-simplificados/ap/ap-c0005-e00546-r.json"
+    const BASEURLSENADORAP = "546/dados-simplificados/ap/ap-c0005-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

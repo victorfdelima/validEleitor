@@ -9,7 +9,7 @@ import APIDeputadoEAP from "./APIDeputadoEAP";
 
 const APIPresidenteAmapa = () => {
 
-    const BASEURLPRESIDENTE = "544/dados-simplificados/ap/ap-c0001-e00544-r.json"
+    const BASEURLPRESIDENTE = "544/dados-simplificados/ap/ap-c0001-e000544-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

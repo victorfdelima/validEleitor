@@ -4,7 +4,7 @@ import Pagination from "../Pagination";
 
 const APIGovernadorAL = () => {
 
-    const BASEURLGOVERNADORAL = "546/dados-simplificados/al/al-c0003-e00546-r.json"
+    const BASEURLGOVERNADORAL = "546/dados-simplificados/al/al-c0003-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

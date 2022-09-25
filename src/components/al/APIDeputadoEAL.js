@@ -3,7 +3,7 @@ import "../../App.css";
 
 const APIDeputadoEAL = () => {
 
-    const BASEURLDeputadoEAL = "546/dados-simplificados/al/al-c0007-e00546-r.json"
+    const BASEURLDeputadoEAL = "546/dados-simplificados/al/al-c0007-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
