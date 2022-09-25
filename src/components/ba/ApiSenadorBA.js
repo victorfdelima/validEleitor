@@ -24,7 +24,8 @@ const APISenadorBA = () => {
                     "cache-control": "s-maxage=10, stale-while-revalidate",
                     "Access-Control-Allow-Origin": "https://app.resultadoeleicoes2022.com.br/",
                     "Access-Control-Allow-Methods": "GET",
-                    "Access-Control-Allow-Headers": "*"
+                    "Access-Control-Allow-Headers": "*",
+                    "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
                 }
             }
         );
