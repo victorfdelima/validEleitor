@@ -98,7 +98,7 @@ const APIDeputadoEAP = () => {
                                     </div>
                                     <div className="text-gray-600 text-xs">
                                         <div>
-                                            Votos: {item.vap}
+                                            Votos: {item.vap.split( /(?=(?:\d{3})+(?:\.|$))/g ).join('.')}
                                         </div>
                                     </div>
                                     <div className="ccN">
