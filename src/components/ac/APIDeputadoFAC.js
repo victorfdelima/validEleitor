@@ -3,7 +3,7 @@ import "../../App.css";
 
 const APIDeputadoFAC = () => {
 
-    const BASEURLDeputadoFAC = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/ac/ac-c0006-e009238-r.json"
+    const BASEURLDeputadoFAC = "546/dados-simplificados/ac/ac-c0006-e00546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -18,10 +18,11 @@ const APIDeputadoFAC = () => {
             `${BASEURLDeputadoFAC}`,
             {
                 method: "GET",
+                method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     "cache-control": "s-maxage=10, stale-while-revalidate",
-                    "Access-Control-Allow-Origin": "https://app.resultadoeleicoes2022.com.br/",
+                    "Access-Control-Allow-Origin": "https://resultados.tse.jus.br/",
                     "Access-Control-Allow-Methods": "GET",
                     "Access-Control-Allow-Headers": "*"
                 }
@@ -84,7 +85,7 @@ const APIDeputadoFAC = () => {
                                     <div className="font-bold mb-1 text-2xl text-ion-tertiary tracking-tight">
                                                         <img
                     className="imagem-candi"
-                    src={`https://resultados-sim.tse.jus.br/teste/ele2022/9238/fotos/ac/${item.sqcand}.jpeg`}
+                    src={`546/fotos/ac/${item.sqcand}.jpeg`}
                     
                   />
                                     {item.pvap + "%"}

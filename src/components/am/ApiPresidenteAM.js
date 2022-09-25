@@ -9,7 +9,7 @@ import APIDeputadoEAM from "./APIDeputadoEAM";
 
 const APIPresidenteAmazonas = () => {
 
-    const BASEURLPRESIDENTE = "https://resultados-sim.tse.jus.br/teste/ele2022/9240/dados-simplificados/am/am-c0001-e009240-r.json"
+    const BASEURLPRESIDENTE = "9240/dados-simplificados/am/am-c0001-e009240-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -24,10 +24,11 @@ const APIPresidenteAmazonas = () => {
             `${BASEURLPRESIDENTE}`,
             {
                 method: "GET",
+                method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     "cache-control": "s-maxage=10, stale-while-revalidate",
-                    "Access-Control-Allow-Origin": "https://app.resultadoeleicoes2022.com.br/",
+                    "Access-Control-Allow-Origin": "https://resultados.tse.jus.br/",
                     "Access-Control-Allow-Methods": "GET",
                     "Access-Control-Allow-Headers": "*"
                 }

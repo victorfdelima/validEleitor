@@ -9,7 +9,7 @@ import APIDeputadoEAC from "./APIDeputadoEAC";
 
 const APIPresidenteAcre = ({filtro}) => {
 
-    const BASEURLPRESIDENTE = "https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json"
+    const BASEURLPRESIDENTE = "544/dados-simplificados/br/br-c0001-e000544-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -24,10 +24,11 @@ const APIPresidenteAcre = ({filtro}) => {
             `${BASEURLPRESIDENTE}`,
             {
                 method: "GET",
+                method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     "cache-control": "s-maxage=10, stale-while-revalidate",
-                    "Access-Control-Allow-Origin": "https://app.resultadoeleicoes2022.com.br/",
+                    "Access-Control-Allow-Origin": "https://resultados.tse.jus.br/",
                     "Access-Control-Allow-Methods": "GET",
                     "Access-Control-Allow-Headers": "*"
                 }

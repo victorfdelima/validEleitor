@@ -9,7 +9,7 @@ import APIDeputadoE from "./APIDeputadoE";
 
 const APIPresidente = () => {
 
-    const BASEURLPRESIDENTE = "https://resultados-sim.tse.jus.br/teste/ele2022/9240/dados-simplificados/se/se-c0001-e009240-r.json"
+    const BASEURLPRESIDENTE = "9240/dados-simplificados/se/se-c0001-e009240-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

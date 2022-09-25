@@ -3,7 +3,7 @@ import "../../App.css";
 
 const APIDeputadoEAP = () => {
 
-    const BASEURLDeputadoEAP = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/ap/ap-c0007-e009238-r.json"
+    const BASEURLDeputadoEAP = "546/dados-simplificados/ap/ap-c0007-e00546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -86,7 +86,7 @@ const APIDeputadoEAP = () => {
                                     <div className="font-bold mb-1 text-2xl text-ion-tertiary tracking-tight">
                                                     <img
                     className="imagem-candi"
-                    src={`https://resultados-sim.tse.jus.br/teste/ele2022/9238/fotos/ap/${item.sqcand}.jpeg`}
+                    src={`546/fotos/ap/${item.sqcand}.jpeg`}
                     alt="te"
                   />
                                     {item.pvap + "%"}

@@ -4,7 +4,7 @@ import Pagination from "../Pagination";
 
 const APISenadorAP = () => {
 
-    const BASEURLSENADORAP = "https://resultados-sim.tse.jus.br/teste/ele2022/9238/dados-simplificados/ap/ap-c0005-e009238-r.json"
+    const BASEURLSENADORAP = "546/dados-simplificados/ap/ap-c0005-e00546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -19,10 +19,11 @@ const APISenadorAP = () => {
             `${BASEURLSENADORAP}`,
             {
                 method: "GET",
+                method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     "cache-control": "s-maxage=10, stale-while-revalidate",
-                    "Access-Control-Allow-Origin": "https://app.resultadoeleicoes2022.com.br/",
+                    "Access-Control-Allow-Origin": "https://resultados.tse.jus.br/",
                     "Access-Control-Allow-Methods": "GET",
                     "Access-Control-Allow-Headers": "*"
                 }
@@ -60,7 +61,7 @@ const APISenadorAP = () => {
                                     <div className="font-bold mb-1 text-2xl text-ion-tertiary tracking-tight">
                                                     <img
                     className="imagem-candi"
-                    src={`https://resultados-sim.tse.jus.br/teste/ele2022/9238/fotos/ap/${item.sqcand}.jpeg`}
+                    src={`546/fotos/ap/${item.sqcand}.jpeg`}
                     alt="te"
                   />
                                     {item.pvap + "%"}
