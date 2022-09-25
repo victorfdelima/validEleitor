@@ -5,7 +5,7 @@ import Pagination from "./Pagination";
 
 const APIPresidenteAll = () => {
 
-    const BASEURLPRESIDENTE = "http://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json"
+    const BASEURLPRESIDENTE = "/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -19,11 +19,10 @@ const APIPresidenteAll = () => {
         const api_response = await fetch(
             `${BASEURLPRESIDENTE}`,
             {
-                mode: "no-cors",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "108.139.113.66:443",
+                    "Access-Control-Allow-Origin": "*",
                     "cache-control": "s-maxage=10, stale-while-revalidate"
                 }
             }

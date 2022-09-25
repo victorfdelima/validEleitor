@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "author": "Victor Ferreira de Lima",
-  "proxy": "http://localhost:3000",
+  "proxy": "https://resultados.tse.jus.br",
+  "homepage": "https://app.resultadoeleicoes2022.com.br",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
