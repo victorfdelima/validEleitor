@@ -9,7 +9,7 @@ import APIDeputadoEMT from "./APIDeputadoEMT";
 
 const APIPresidenteMT = () => {
 
-    const BASEURLPRESIDENTE = "9240/dados-simplificados/mt/mt-c0001-e009240-r.json"
+    const BASEURLPRESIDENTE = "544/dados-simplificados/mt/mt-c0001-e00544-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

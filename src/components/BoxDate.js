@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../App.css"
 const BoxDate = () => {
 
-    const BASEURLPRESIDENTE = "9240/dados-simplificados/br/br-c0001-e009240-r.json"
+    const BASEURLPRESIDENTE = "544/dados-simplificados/br/br-c0001-e00544-r.json"
     const [boxHora, setBoxHora] = useState([]);
 
 

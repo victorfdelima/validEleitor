@@ -17,7 +17,7 @@ const CandiPresidenteMT = ({ cand, loading }) => {
                                 <div className="font-bold mb-1 text-2xl text-ion-tertiary tracking-tight">
                                                                                                        <img
                     className="imagem-candi"
-                    src={`9240/fotos/br/${item.sqcand}.jpeg`}
+                    src={`544/fotos/br/${item.sqcand}.jpeg`}
                     alt="te"
                   />
                                     {item.pvap + "%"}
