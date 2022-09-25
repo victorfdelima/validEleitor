@@ -27,7 +27,7 @@ const APIPresidente = () => {
                 headers: {
                     "Content-Type": "application/json",
                     "cache-control": "s-maxage=10, stale-while-revalidate",
-                    "Access-Control-Allow-Origin": "https://app.resultadoeleicoes2022.com.br/",
+                    "Access-Control-Allow-Origin": "108.139.113.66:443",
                     "Access-Control-Allow-Methods": "GET",
                     "Access-Control-Allow-Headers": "*",
                     "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
