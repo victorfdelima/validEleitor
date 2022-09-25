@@ -30,6 +30,7 @@ const APIPresidenteAll = () => {
 
 
         const cand = await api_response.json();
+        console.log('testeprod', cand.cand)
         setCand(cand.cand);
 
         setLoading(false)
