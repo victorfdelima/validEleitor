@@ -9,7 +9,7 @@ import APIDeputadoEAC from "./APIDeputadoEAC";
 
 const APIPresidenteAcre = ({filtro}) => {
 
-    const BASEURLPRESIDENTE = "https://resultados-sim.tse.jus.br/teste/ele2022/9240/dados-simplificados/ac/ac-c0001-e009240-r.json"
+    const BASEURLPRESIDENTE = "https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
