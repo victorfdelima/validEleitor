@@ -33,10 +33,10 @@ const CandiPresidente = ({ cand, loading }) => {
                                     </div>
                                 </div>
                                 <div className="ccN">
-                                    {item.cc} - {item.n}
+                                    Vice: {item.nv}
                                 </div>
-                                <div className="font-bold text-2xl tracking-tight">
-                                    {item.nm}
+                                <div className="font-bold candidato tracking-tight">
+                                    {item.nm.replace("&apos;", "'")}
                                 </div>
                             </div>
                         </div>

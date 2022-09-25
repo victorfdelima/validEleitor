@@ -35,7 +35,7 @@ const CandiPresidenteCeara = ({ cand, loading }) => {
                                     {item.cc} - {item.n}
                                 </div>
                                 <div className="font-bold text-2xl tracking-tight">
-                                    {item.nm}
+                                {item.nm.replace("&apos;", "'")}
                                 </div>
                             </div>
                         </div>

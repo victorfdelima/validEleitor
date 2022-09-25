@@ -15,7 +15,7 @@ const CandiPresidenteGoias = ({ cand, loading }) => {
                         <div className="card col-lg-4">
                             <div className="flex-1 flex flex-col p-4 shadow-md rounded bg-white">
                                 <div className="font-bold mb-1 text-2xl text-ion-tertiary tracking-tight">
-                                                                                                       <img
+                                                                                                                                                                              <img
                     className="imagem-candi"
                     src={`544/fotos/br/${item.sqcand}.jpeg`}
                     alt="te"
@@ -32,10 +32,10 @@ const CandiPresidenteGoias = ({ cand, loading }) => {
                                     </div>
                                 </div>
                                 <div className="ccN">
-                                    {item.cc} - {item.n}
+                                    Vice: {item.nv}
                                 </div>
-                                <div className="font-bold text-2xl tracking-tight">
-                                    {item.nm}
+                                <div className="font-bold candidato tracking-tight">
+                                    {item.nm.replace("&apos;", "'")}
                                 </div>
                             </div>
                         </div>
