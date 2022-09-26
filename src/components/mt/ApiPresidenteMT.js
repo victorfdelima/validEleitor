@@ -9,7 +9,7 @@ import APIDeputadoEMT from "./APIDeputadoEMT";
 
 const APIPresidenteMT = () => {
 
-    const BASEURLPRESIDENTE = "544/dados-simplificados/mt/mt-c0001-e000544-r.json"
+    const BASEURLPRESIDENTE = "https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/mt/mt-c0001-e000544-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

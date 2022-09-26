@@ -4,7 +4,7 @@ import "../../App.css";
 const APIDeputadoEMG = () => {
     
 
-    const BASEURLDeputadoEMG = "546/dados-simplificados/mg/mg-c0007-e000546-r.json"
+    const BASEURLDeputadoEMG = "https://resultados.tse.jus.br/oficial/ele2022/546/dados-simplificados/mg/mg-c0007-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

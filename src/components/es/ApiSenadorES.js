@@ -4,7 +4,7 @@ import Pagination from "../Pagination";
 
 const APISenadorES = () => {
 
-    const BASEURLSENADORES = "546/dados-simplificados/es/es-c0005-e000546-r.json"
+    const BASEURLSENADORES = "https://resultados.tse.jus.br/oficial/ele2022/546/dados-simplificados/es/es-c0005-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

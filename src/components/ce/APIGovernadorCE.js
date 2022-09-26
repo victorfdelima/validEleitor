@@ -4,7 +4,7 @@ import Pagination from "../Pagination";
 
 const APIGovernadorCE = () => {
 
-    const BASEURLGOVERNADORCE = "546/dados-simplificados/ce/ce-c0003-e000546-r.json"
+    const BASEURLGOVERNADORCE = "https://resultados.tse.jus.br/oficial/ele2022/546/dados-simplificados/ce/ce-c0003-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

@@ -3,7 +3,7 @@ import "../../App.css";
 
 const APIDeputadoFAL = () => {
 
-    const BASEURLDeputadoFAL = "546/dados-simplificados/al/al-c0006-e000546-r.json"
+    const BASEURLDeputadoFAL = "https://resultados.tse.jus.br/oficial/ele2022/546/dados-simplificados/al/al-c0006-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)

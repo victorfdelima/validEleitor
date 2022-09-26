@@ -4,7 +4,7 @@ import Pagination from "../Pagination";
 
 const APIGovernadorMS = () => {
 
-    const BASEURLGOVERNADORMS = "546/dados-simplificados/ms/ms-c0003-e000546-r.json"
+    const BASEURLGOVERNADORMS = "https://resultados.tse.jus.br/oficial/ele2022/546/dados-simplificados/ms/ms-c0003-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
