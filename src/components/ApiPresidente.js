@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 import CandiPresidente from "./CandiPresidente";
 import Pagination from "./Pagination";
-
+import apiExt from "./ApiPresidenteAxios";
 const APIPresidenteAll = () => {
 
-    const BASEURLPRESIDENTE = "544/dados-simplificados/br/br-c0001-e000544-r.json"
+    const BASEURLPRESIDENTE = <apiExt/>
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -16,23 +16,18 @@ const APIPresidenteAll = () => {
         getUserPresidenteAll();
     }, []);
     const getUserPresidenteAll = async () => {
-        const api_response = await fetch(
-            `${BASEURLPRESIDENTE}`,
-            {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*",
-                    "cache-control": "s-maxage=10, stale-while-revalidate"
-                }
-            }
-        );
+    apiExt.get("544/dados-simplificados/br/br-c0001-e000544-r.json")
+      .then((response) =>{ 
+      setCand(response.data.cand)
+      console.log('teste', response.data.cand)
+      setLoading(false)
+    })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
 
 
-        const cand = await api_response.json();
-        setCand(cand.cand);
-
-        setLoading(false)
+ 
     };
 
     // Current dados
