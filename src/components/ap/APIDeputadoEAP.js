@@ -71,12 +71,6 @@ const APIDeputadoEAP = () => {
                     placeholder="Procure por um deputado"
                     onChange={(event) => setSearch(event.target.value)}
                     />
-                                       <input
-                className="inputbuscaDepE"
-                    type="text"
-                    placeholder="Procure por um deputado"
-                    onChange={(event) => setSearch(event.target.value)}
-                    />
             <div className="grupo-card">
                 {filteredCands.map((item, index) => (
                     <div className="container">
