@@ -23,9 +23,6 @@ const APISenadorAM = () => {
                 headers: {
                     "Content-Type": "application/json",
 
-                    "Access-Control-Allow-Origin": "https://resultados.tse.jus.br/",
-                    "Access-Control-Allow-Methods": "GET",
-                    "Access-Control-Allow-Headers": "*"
                 }
             }
         );
