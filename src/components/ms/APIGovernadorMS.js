@@ -19,7 +19,6 @@ const APIGovernadorMS = () => {
             `${BASEURLGOVERNADORMS}`,
             {
                 method: "GET",
-                method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",

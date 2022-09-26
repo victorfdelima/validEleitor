@@ -19,7 +19,6 @@ const APISenadorAL = () => {
             `${BASEURLSENADORAL}`,
             {
                 method: "GET",
-                method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",
