@@ -21,6 +21,7 @@ const APIDeputadoEAM = () => {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
                     "cache-control": "s-maxage=10, stale-while-revalidate",
                     "Access-Control-Allow-Methods": "GET",
                     "Access-Control-Allow-Headers": "*",
