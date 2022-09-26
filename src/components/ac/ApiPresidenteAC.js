@@ -22,7 +22,7 @@ const APIPresidenteAcre = ({filtro}) => {
     const getUserPresidenteACRE = async () => {
         const api_response = await fetch(
             `${BASEURLPRESIDENTE}`,
-            {                mode: "cors",
+            {                
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

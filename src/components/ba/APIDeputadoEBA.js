@@ -17,7 +17,7 @@ const APIDeputadoEBA = () => {
     const getUserDeputadoEBA = async () => {
         const api_response = await fetch(
             `${BASEURLDeputadoEBA}`,
-            {                mode: "cors",
+            {                
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

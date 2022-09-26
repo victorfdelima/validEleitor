@@ -17,7 +17,7 @@ const APIDeputadoFAL = () => {
     const getUserDeputadoFAL = async () => {
         const api_response = await fetch(
             `${BASEURLDeputadoFAL}`,
-            {                mode: "cors",
+            {                
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

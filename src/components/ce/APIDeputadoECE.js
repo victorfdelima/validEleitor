@@ -17,7 +17,7 @@ const APIDeputadoECE = () => {
     const getUserDeputadoECE = async () => {
         const api_response = await fetch(
             `${BASEURLDeputadoECE}`,
-            {                mode: "cors",
+            {                
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

@@ -17,7 +17,7 @@ const APIDeputadoEAM = () => {
     const getUserDeputadoEAM = async () => {
         const api_response = await fetch(
             `${BASEURLDeputadoEAM}`,
-            {                mode: "cors",
+            {                
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

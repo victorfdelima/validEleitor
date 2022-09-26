@@ -18,7 +18,7 @@ const APIPresidenteAll = () => {
     const getUserPresidenteAll = async () => {
         const api_response = await fetch(
             `${BASEURLPRESIDENTE}`,
-            {                mode: "cors",
+            {                
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

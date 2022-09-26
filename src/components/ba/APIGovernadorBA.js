@@ -17,7 +17,7 @@ const APIGovernadorBA = () => {
     const getUserGovernadorBA = async () => {
         const api_response = await fetch(
             `${BASEURLGOVERNADORBA}`,
-            {                mode: "cors",
+            {                
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
