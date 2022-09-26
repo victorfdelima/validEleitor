@@ -22,7 +22,7 @@ const APIPresidenteGoias = () => {
     const getUserPresidenteESanto = async () => {
         const api_response = await fetch(
             `${BASEURLPRESIDENTE}`,
-            {                mode: "same-origin",
+            {                mode: "cors",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

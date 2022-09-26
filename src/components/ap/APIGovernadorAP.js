@@ -17,7 +17,7 @@ const APIGovernadorAP = () => {
     const getUserGovernadorAP = async () => {
         const api_response = await fetch(
             `${BASEURLGOVERNADORAP}`,
-            {                mode: "same-origin",
+            {                mode: "cors",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

@@ -17,7 +17,7 @@ const APIDeputadoFBA = () => {
     const getUserDeputadoFBA = async () => {
         const api_response = await fetch(
             `${BASEURLDeputadoFBA}`,
-            {                mode: "same-origin",
+            {                mode: "cors",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

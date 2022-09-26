@@ -17,7 +17,7 @@ const APISenadorAM = () => {
     const getUserSenadorAM = async () => {
         const api_response = await fetch(
             `${BASEURLSENADORAM}`,
-            {                mode: "same-origin",
+            {                mode: "cors",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

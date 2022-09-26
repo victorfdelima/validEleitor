@@ -17,7 +17,7 @@ const APIDeputadoFAP = () => {
     const getUserDeputadoFAP = async () => {
         const api_response = await fetch(
             `${BASEURLDeputadoFAP}`,
-            {                mode: "same-origin",
+            {                mode: "cors",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
