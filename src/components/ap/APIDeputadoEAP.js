@@ -20,7 +20,15 @@ const APIDeputadoEAP = () => {
             {
                 method: "GET",
                 headers: {
+                    "Content-Type": "application/json,
+                    "cache-control": "s-maxage=10, stale-while-revalidate",
                     "Content-Type": "application/json",
+                    "cache-control": "s-maxage=10, stale-while-revalidate",
+                    
+                    "Access-Control-Allow-Methods": "GET",
+                    "Access-Control-Allow-Headers": "*",
+
+
 
                 }
             }
