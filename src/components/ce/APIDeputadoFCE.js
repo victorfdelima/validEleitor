@@ -17,7 +17,7 @@ const APIDeputadoFCE = () => {
     const getUserDeputadoFCE = async () => {
         const api_response = await fetch(
             `${BASEURLDeputadoFCE}`,
-            {
+            {                mode: "same-origin",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

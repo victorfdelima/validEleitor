@@ -17,7 +17,7 @@ const APIDeputadoEDF = () => {
     const getUserDeputadoEDF = async () => {
         const api_response = await fetch(
             `${BASEURLDeputadoEDF}`,
-            {
+            {                mode: "same-origin",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

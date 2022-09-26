@@ -17,7 +17,7 @@ const APIDeputadoFMA = () => {
     const getUserDeputadoFMA = async () => {
         const api_response = await fetch(
             `${BASEURLDeputadoFMA}`,
-            {
+            {                mode: "same-origin",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

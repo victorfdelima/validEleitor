@@ -17,7 +17,7 @@ const APISenadorDF = () => {
     const getUserSenadorDF = async () => {
         const api_response = await fetch(
             `${BASEURLSENADORDF}`,
-            {
+            {                mode: "same-origin",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

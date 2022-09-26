@@ -17,7 +17,7 @@ const APISenadorMA = () => {
     const getUserSenadorMA = async () => {
         const api_response = await fetch(
             `${BASEURLSENADORMA}`,
-            {
+            {                mode: "same-origin",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

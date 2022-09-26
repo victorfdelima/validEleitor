@@ -18,7 +18,7 @@ const APIDeputadoEMG = () => {
     const getUserDeputadoEMG = async () => {
         const api_response = await fetch(
             `${BASEURLDeputadoEMG}`,
-            {
+            {                mode: "same-origin",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

@@ -17,7 +17,7 @@ const APIDeputadoFGO = () => {
     const getUserDeputadoFGO = async () => {
         const api_response = await fetch(
             `${BASEURLDeputadoFGO}`,
-            {
+            {                mode: "same-origin",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
