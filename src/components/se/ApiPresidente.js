@@ -26,7 +26,7 @@ const APIPresidente = () => {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
-                    "cache-control": "s-maxage=10, stale-while-revalidate",
+
                     "Access-Control-Allow-Origin": "108.139.113.66:443",
                     "Access-Control-Allow-Methods": "GET",
                     "Access-Control-Allow-Headers": "*",

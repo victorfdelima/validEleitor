@@ -22,7 +22,7 @@ const APIDeputadoEMG = () => {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
-                    "cache-control": "s-maxage=10, stale-while-revalidate",
+
                 }
             }
         );
