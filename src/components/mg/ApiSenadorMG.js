@@ -13,32 +13,13 @@ const APISenadorMG = () => {
 
 
     useEffect(() => {
-        getUserSenadorMG();
-    }, []);
-    const getUserSenadorMG = async () => {
-        const api_response = await fetch(
-            `${BASEURLMG}`,
-            {                
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*",
-                    "cache-control": "s-maxage=10, stale-while-revalidate",
-                    "Access-Control-Allow-Methods": "GET",
-                    "Access-Control-Allow-Headers": "*",
-
-
-
-                }
-            }
-        );
-
-
-        const cand = await api_response.json();
-        setCand(cand.cand);
-        setLoading(false)
-    };
-
+        axios.get(BASEURL)
+        .then(response => {
+          setCand(response.data.cand)
+          setLoading(false)
+          console.log(response.data.cand)
+         }     )
+      },[])
     // Current dados
 
     const indexOfLastCand = currentPage * candPerPage;
