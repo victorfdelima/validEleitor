@@ -17,7 +17,7 @@ const CandiPresidenteAmapa = ({ cand, loading }) => {
                                 <div className="font-bold mb-1 text-2xl text-ion-tertiary tracking-tight">
                                                                                                                                                                               <img
                     className="imagem-candi"
-                    src={`544/fotos/br/${item.sqcand}.jpeg`}
+                    src={`https://resultados.tse.jus.br/oficial/ele2022/544/fotos/br/${item.sqcand}.jpeg`}
                     alt="te"
                   />
                                     {item.pvap + "%"}

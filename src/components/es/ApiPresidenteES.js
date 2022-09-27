@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
+import axios from "axios";
 import APISenadorES from "./ApiSenadorES";
 import CandiPresidenteESanto from "./CandiPresidenteESanto";
 import Pagination from "../Pagination";
@@ -9,7 +10,7 @@ import APIDeputadoEES from "./APIDeputadoEES";
 
 const APIPresidenteESanto = () => {
 
-    const BASEURLPRESIDENTE = "https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/es/es-c0001-e000544-r.json"
+    const BASEURL = "https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/es/es-c0001-e000544-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -21,7 +22,7 @@ const APIPresidenteESanto = () => {
     }, []);
     const getUserPresidenteESanto = async () => {
         const api_response = await fetch(
-            `${BASEURLPRESIDENTE}`,
+            `${BASEURL}`,
             {                
                 method: "GET",
                 headers: {

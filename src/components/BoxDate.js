@@ -1,38 +1,17 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../App.css"
 const BoxDate = () => {
 
-    const BASEURLPRESIDENTE = "https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json"
     const [boxHora, setBoxHora] = useState([]);
 
-
     useEffect(() => {
-        getUserPresidenteAll();
-    }, []);
-    const getUserPresidenteAll = async () => {
-        const api_response = await fetch(
-            `${BASEURLPRESIDENTE}`,
-            {                
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*",
-                    "cache-control": "s-maxage=10, stale-while-revalidate",
-                    "Access-Control-Allow-Methods": "GET",
-                    "Access-Control-Allow-Headers": "*",
-
-
-
-                }
-            }
-        );
-
-
-        const boxHora = await api_response.json();
-        setBoxHora(boxHora);
-
-
-    };
+        axios.get('https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json')
+        .then(response => {
+          setBoxHora(response.data)
+          console.log(response.data)
+         }     )
+      },[])
     return (
         <div className="container-date-grande">
             <div className="container-data">

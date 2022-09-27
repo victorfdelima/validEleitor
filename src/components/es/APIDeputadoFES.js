@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useMemo } from "react";
 import "../../App.css";
+import axios from "axios";
 
 const APIDeputadoFES = () => {
 
-    const BASEURLDeputadoFES = "https://resultados.tse.jus.br/oficial/ele2022/546/dados-simplificados/es/es-c0006-e000546-r.json"
+    const BASEURL = "https://resultados.tse.jus.br/oficial/ele2022/546/dados-simplificados/es/es-c0006-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -16,7 +17,7 @@ const APIDeputadoFES = () => {
     }, []);
     const getUserDeputadoFES = async () => {
         const api_response = await fetch(
-            `${BASEURLDeputadoFES}`,
+            `${BASEURLES}`,
             {                
                 method: "GET",
                 headers: {
@@ -89,7 +90,7 @@ const APIDeputadoFES = () => {
                                     <div className="font-bold mb-1 text-2xl text-ion-tertiary tracking-tight">
                                                     <img
                     className="imagem-candi"
-                    src={`546/fotos/es/${item.sqcand}.jpeg`}
+                    src={`https://resultados.tse.jus.br/oficial/ele2022/546/fotos/es/${item.sqcand}.jpeg`}
                     alt="te"
                   />
                                     {item.pvap + "%"}

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
+import axios from "axios";
 import Pagination from "../Pagination";
 
 const APISenadorAC = () => {
 
-    const BASEURLSENADORAC = "https://resultados.tse.jus.br/oficial/ele2022/546/dados-simplificados/ac/ac-c0005-e000546-r.json"
+    const BASEURL = "https://resultados.tse.jus.br/oficial/ele2022/546/dados-simplificados/ac/ac-c0005-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -12,31 +13,13 @@ const APISenadorAC = () => {
 
 
     useEffect(() => {
-        getUserSenadorAC();
-    }, []);
-    const getUserSenadorAC = async () => {
-        const api_response = await fetch(
-            `${BASEURLSENADORAC}`,
-            {                
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*",
-                    "cache-control": "s-maxage=10, stale-while-revalidate",
-                    "Access-Control-Allow-Methods": "GET",
-                    "Access-Control-Allow-Headers": "*",
-
-
-
-                }
-            }
-        );
-
-
-        const cand = await api_response.json();
-        setCand(cand.cand);
-        setLoading(false)
-    };
+        axios.get(BASEURL)
+        .then(response => {
+          setCand(response.data.cand)
+          setLoading(false)
+          console.log(response.data.cand)
+         }     )
+      },[])
 
     // Current dados
 
@@ -62,7 +45,7 @@ const APISenadorAC = () => {
                                     <div className="font-bold mb-1 text-2xl text-ion-tertiary tracking-tight">
                                                     <img
                     className="imagem-candi"
-                    src={`546/fotos/ac/${item.sqcand}.jpeg`}
+                    src={`https://resultados.tse.jus.br/oficial/ele2022/546/fotos/ac/${item.sqcand}.jpeg`}
                     alt="te"
                   />
                                     {item.pvap + "%"}

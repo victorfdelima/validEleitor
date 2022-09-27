@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
+import axios from "axios";
 import Pagination from "../Pagination";
 
 const APIGovernadorMT = () => {
 
-    const BASEURLGOVERNADORMT = "https://resultados.tse.jus.br/oficial/ele2022/546/dados-simplificados/mt/mt-c0003-e000546-r.json"
+    const BASEURL = "https://resultados.tse.jus.br/oficial/ele2022/546/dados-simplificados/mt/mt-c0003-e000546-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -16,7 +17,7 @@ const APIGovernadorMT = () => {
     }, []);
     const getUserGovernadorMT = async () => {
         const api_response = await fetch(
-            `${BASEURLGOVERNADORMT}`,
+            `${BASEURLMT}`,
             {                
                 method: "GET",
                 headers: {
@@ -63,7 +64,7 @@ const APIGovernadorMT = () => {
                                     <div className="font-bold mb-1 text-2xl text-ion-tertiary tracking-tight">
                                                     <img
                     className="imagem-candi"
-                    src={`546/fotos/mt/${item.sqcand}.jpeg`}
+                    src={`https://resultados.tse.jus.br/oficial/ele2022/546/fotos/mt/${item.sqcand}.jpeg`}
                     alt="te"
                   />
                                     {item.pvap + "%"}

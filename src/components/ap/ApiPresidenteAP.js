@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
+import axios from "axios";
 import APISenadorAP from "./ApiSenadorAP";
 import CandiPresidenteAmapa from "./CandiPresidenteAmapa";
 import Pagination from "../Pagination";
@@ -9,40 +10,20 @@ import APIDeputadoEAP from "./APIDeputadoEAP";
 
 const APIPresidenteAmapa = () => {
 
-    const BASEURLPRESIDENTE = "https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/ap/ap-c0001-e000544-r.json"
+    const BASEURL = "https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/ap/ap-c0001-e000544-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
     const [candPerPage] = useState(8)
 
-
     useEffect(() => {
-        getUserPresidenteAMAPA();
-    }, []);
-    const getUserPresidenteAMAPA = async () => {
-        const api_response = await fetch(
-            `${BASEURLPRESIDENTE}`,
-            {                
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*",
-                    "cache-control": "s-maxage=10, stale-while-revalidate",
-                    "Access-Control-Allow-Methods": "GET",
-                    "Access-Control-Allow-Headers": "*",
-
-
-
-                }
-            }
-        );
-
-
-        const cand = await api_response.json();
-        setCand(cand.cand);
-
-        setLoading(false)
-    };
+        axios.get(BASEURL)
+        .then(response => {
+          setCand(response.data.cand)
+          setLoading(false)
+          console.log(response.data.cand)
+         }     )
+      },[])
 
     // Current dados
 

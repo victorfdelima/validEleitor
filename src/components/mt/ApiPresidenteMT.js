@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
+import axios from "axios";
 import APISenadorMT from "./ApiSenadorMT";
 import CandiPresidenteMT from "./CandiPresidenteMT";
 import Pagination from "../Pagination";
@@ -9,7 +10,7 @@ import APIDeputadoEMT from "./APIDeputadoEMT";
 
 const APIPresidenteMT = () => {
 
-    const BASEURLPRESIDENTE = "https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/mt/mt-c0001-e000544-r.json"
+    const BASEURL = "https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/mt/mt-c0001-e000544-r.json"
     const [cand, setCand] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -21,7 +22,7 @@ const APIPresidenteMT = () => {
     }, []);
     const getUserPresidenteMT = async () => {
         const api_response = await fetch(
-            `${BASEURLPRESIDENTE}`,
+            `${BASEURL}`,
             {                
                 method: "GET",
                 headers: {
