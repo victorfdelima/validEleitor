@@ -12,8 +12,8 @@ const APIDeputadoF = () => {
     const [search, setSearch] = useState('');
 
 
-        useEffect(() => {
-        axios.get(BASEURL)
+        useEffect( async () => {
+       await axios.get(BASEURL)
         .then(response => {
           setCand(response.data.cand)
           setLoading(false)

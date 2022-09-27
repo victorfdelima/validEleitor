@@ -10,8 +10,8 @@ const APIDeputadoEAC = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [candPerPage] = useState(8)
     const [search, setSearch] = useState('');
-    useEffect(() => {
-        axios.get(BASEURLDeputadoEAC)
+    useEffect( async () => {
+       await axios.get(BASEURLDeputadoEAC)
         .then(response => {
           setCand(response.data.cand)
           setLoading(false)

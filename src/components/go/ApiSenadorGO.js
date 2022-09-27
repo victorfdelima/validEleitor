@@ -13,8 +13,8 @@ const APISenadorGO = () => {
 
 
   
-    useEffect(() => {
-        axios.get(BASEURL)
+    useEffect( async () => {
+       await axios.get(BASEURL)
         .then(response => {
           setCand(response.data.cand)
           setLoading(false)
