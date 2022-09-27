@@ -59,7 +59,7 @@ const APIGovernadorAC = () => {
                                         </div>
                                     </div>
                                     <div className="ccN">
-                                        {item.cc} - {item.n}
+                                        {item.cc.split('/')} - {item.n}
                                     </div>
                                     <div className="font-bold text-2xl tracking-tight">
                                         {item.nm}
