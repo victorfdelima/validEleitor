@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
 import axios from "axios";
-import Pagination from "../Pagination";
 
 const APISenador = () => {
 
@@ -36,7 +35,7 @@ const APISenador = () => {
         return <h2>Loading...</h2>
     }
     return (
-        <div>
+        <div >
             <div className="grupo-card">
                 {cand.map((item, index) => (
                     <div className="container">
@@ -76,7 +75,6 @@ const APISenador = () => {
                 </div>
 
             </div>
-            <Pagination candPerPage={candPerPage} totalCands={cand.length} paginate={paginate} />
         </div>
     );
 }

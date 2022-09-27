@@ -49,7 +49,7 @@ const APIPresidente = () => {
                 </div>
                 <div>
                     <span className="titleAC">Senadores</span>
-                    <APISenador cand={currentCands} loading={loading} />
+                    <APISenador/>
                 </div>
                 <div className="flex flex-row mt-4">
                     <div className="flex-1">
