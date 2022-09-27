@@ -338,11 +338,11 @@
 }
 
 .container-header {
-  background-color: white;
+  background-color: purple;
 }
 
 .title-header {
-  color: green;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
