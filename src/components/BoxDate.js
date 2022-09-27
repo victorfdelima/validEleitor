@@ -5,8 +5,8 @@ const BoxDate = () => {
 
     const [boxHora, setBoxHora] = useState([]);
 
-    useEffect( async () => {
-       await axios.get('https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json')
+    useEffect( () => {
+       axios.get('https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json')
         .then(response => {
           setBoxHora(response.data)
           console.log(response.data)

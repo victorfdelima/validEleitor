@@ -16,8 +16,8 @@ const APIPresidenteAmapa = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [candPerPage] = useState(8)
 
-    useEffect( async () => {
-       await axios.get(BASEURL)
+    useEffect( () => {
+       axios.get(BASEURL)
         .then(response => {
           setCand(response.data.cand)
           setLoading(false)

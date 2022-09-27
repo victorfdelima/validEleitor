@@ -12,8 +12,8 @@ const APISenadorAC = () => {
     const [candPerPage] = useState(8)
 
 
-    useEffect( async () => {
-       await axios.get(BASEURL)
+    useEffect( () => {
+       axios.get(BASEURL)
         .then(response => {
           setCand(response.data.cand)
           setLoading(false)
