@@ -14,6 +14,7 @@ const APIPresidenteAll = () => {
 	 useEffect(() => {
 	     axios.get('https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json', {
         headers: {
+          'cache-control': 's-maxage=50, stale-while-revalidate',
         }
        })
 	    .then(response =>  {  
