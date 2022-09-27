@@ -12,12 +12,8 @@ const APIPresidenteAll = () => {
     const [candPerPage] = useState(8)
 
 	 useEffect(() => {
-	     axios.get('https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json', {
-        headers: {
-          'cache-control': 's-maxage=50, stale-while-revalidate',
-          'Access-Control-Allow-Origin': '*'
-        }
-       })
+	     axios.get('https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json'
+       )
 	    .then(response =>  {  
 	      setCand(response.data.cand)
 	      setLoading(false)
