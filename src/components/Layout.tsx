@@ -1,8 +1,7 @@
 import { Box, Button, Flex, useDisclosure } from '@chakra-ui/react';
 import { ReactNode, useEffect, useRef, useState } from 'react';
-import { DividerHorizontal } from './Divider/Horizontal';
-import Logo from './Logo';
 import { BiMenu } from 'react-icons/bi';
+import { DividerHorizontal } from './Divider/Horizontal';
 
 function Header({
   hasSidebar,
@@ -35,7 +34,7 @@ function Header({
         )}
 
         <Box width={['100px', '120px', '136px']}>
-          <Logo size='100%' />
+          {/* <Logo size='100%' /> */}
         </Box>
       </Flex>
     </Flex>

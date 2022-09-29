@@ -1,9 +1,7 @@
 import axios from 'axios';
 import { getToken, logout } from './auth';
 
-export const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
-});
+export const api = axios.create();
 
 api.interceptors.request.use(
   async (config) => {

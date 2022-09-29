@@ -7,16 +7,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
     font-size: 16px;
-    
-    box-shadow: none !important;
-
-    &:hover {
-      box-shadow: none !important;
-    }
-
-    &:active {
-      box-shadow: none !important;
-    }
 
     &:focus {
       box-shadow: none !important;
@@ -24,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.theme.colors.darkGray};
+    background: ${(props) => props.theme.colors.shade};
   }
 
   html {
