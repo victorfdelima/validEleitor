@@ -76,7 +76,14 @@ export default function StateDeputies() {
       candidate.nm.toLowerCase().includes(search.toLowerCase()),
     );
 
-    return candidates;
+    const elects = candidates.filter(
+      (candidate: ICandidate) => candidate.e === 's',
+    );
+    const notElects = candidates.filter(
+      (candidate: ICandidate) => candidate.e === 'n',
+    );
+
+    return [...elects, ...notElects];
   }, [stateDeputiesData, search]);
 
   const totalVotes = Number(stateDeputiesData?.tv ?? 0);
@@ -147,6 +154,7 @@ export default function StateDeputies() {
             >
               {currentCandidates.map((candidate: ICandidate, index: number) => (
                 <Flex
+                  key={candidate.sqcand}
                   flexDir='column'
                   py='0.5rem'
                   borderTop='1px solid'
@@ -227,6 +235,19 @@ export default function StateDeputies() {
                         mt='4px'
                       >
                         Eleito
+                      </Box>
+                    )}
+                    {candidate.st && candidate.st !== 'Suplente' && (
+                      <Box
+                        bg='purple.200'
+                        color='purple.500'
+                        fontWeight='bold'
+                        padding='2px 4px'
+                        borderRadius='8px'
+                        fontSize='0.8rem'
+                        mt='4px'
+                      >
+                        {candidate.st}
                       </Box>
                     )}
                   </Flex>

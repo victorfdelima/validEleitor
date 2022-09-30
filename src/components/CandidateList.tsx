@@ -54,6 +54,7 @@ export interface ICandidate {
   pvap: string; // porcentagem votos apurados
   dvt: string; // informação extra
   e: string; // eleito
+  st: string;
 }
 
 export function CandidateList({

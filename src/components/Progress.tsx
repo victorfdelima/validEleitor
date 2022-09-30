@@ -73,6 +73,7 @@ export function Progress({ data, isLoading, onRefetch }: ProgressProps) {
             w={`${parsedPercentage}%`}
             h='100%'
             bgGradient={`linear(to-r, main, yellow.300)`}
+            borderRadius='4px'
           />
         </Flex>
 
