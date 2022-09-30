@@ -21,17 +21,18 @@ import {
   Previous,
   usePaginator,
 } from 'chakra-paginator';
-import { useMemo, useState } from 'react';
-import { defaultTheme } from '../styles/themes/default';
-import { Candidate } from './Candidate';
 import { ArrowLeft, ArrowRight, Heart } from 'phosphor-react';
-import Skeleton from 'react-loading-skeleton';
+import { useMemo, useState } from 'react';
 import {
   buildStyles,
   CircularProgressbarWithChildren,
 } from 'react-circular-progressbar';
+import Skeleton from 'react-loading-skeleton';
+import { useNavigate } from 'react-router-dom';
+import { defaultTheme } from '../styles/themes/default';
 import { getImageUrl } from '../utils/getUrl';
 import { TextEllipsis } from '../utils/text';
+import { Candidate } from './Candidate';
 
 interface CandidateListProps {
   title: string;
@@ -74,6 +75,8 @@ export function CandidateList({
     null,
   );
 
+  const navigate = useNavigate();
+
   const { currentPage, setCurrentPage } = usePaginator({
     total: candidates.length,
     initialState: {
@@ -81,6 +84,24 @@ export function CandidateList({
       currentPage: 1,
     },
   });
+
+  function getCompleteListLink() {
+    if (type === 'congressman') {
+      if (state === 'br') {
+        console.log('cbr');
+        return `/congressmen`;
+      }
+      return `/congressmen?defaultState=${state}`;
+    }
+    if (type === 'stateDeputy') {
+      if (state === 'br') {
+        return `/state-deputies`;
+      }
+      return `/state-deputies?defaultState=${state}`;
+    }
+
+    return '/';
+  }
 
   function handleToggleFavorite(id: string) {
     if (favoriteIds.includes(id)) {
@@ -168,10 +189,16 @@ export function CandidateList({
           </Heading>
 
           <Button
+            onClick={() => navigate(getCompleteListLink())}
             bg='mainLight'
             colorScheme='whiteAlpha'
             color='mainDark'
             fontSize='0.7rem'
+            display={
+              type === 'congressman' || type === 'stateDeputy'
+                ? undefined
+                : 'none'
+            }
           >
             Ver lista completa
             <ArrowRight size={16} />
@@ -386,7 +413,12 @@ export function CandidateList({
             </Flex>
 
             <Flex flexDir='column'>
-              <Flex flexDir='column'>
+              <Flex
+                flexDir='column'
+                display={
+                  type === 'president' || type === 'governor' ? 'flex' : 'none'
+                }
+              >
                 <Text color='text' fontSize='0.7rem'>
                   Vice-Presidente
                 </Text>

@@ -16,4 +16,12 @@ export const routes: Route[] = [
     path: '/',
     component: lazy(() => import('../pages')),
   },
+  {
+    path: '/congressmen',
+    component: lazy(() => import('../pages/congressmen')),
+  },
+  {
+    path: '/state-deputies',
+    component: lazy(() => import('../pages/state-deputies')),
+  },
 ];

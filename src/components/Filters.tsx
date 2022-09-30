@@ -18,6 +18,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 import { IState } from '../pages';
 import { defaultTheme } from '../styles/themes/default';
+import { states as statesArray } from '../utils/states';
 
 interface FiltersProps {
   onSearch: (search: string) => void;
@@ -46,35 +47,7 @@ export function Filters({
     setCurrentState(selectedState);
   }, [selectedState]);
 
-  const states = useRef([
-    { name: 'Acre', abbreviation: 'AC' },
-    { name: 'Alagoas', abbreviation: 'AL' },
-    { name: 'Amapá', abbreviation: 'AP' },
-    { name: 'Amazonas', abbreviation: 'AM' },
-    { name: 'Bahia', abbreviation: 'BA' },
-    { name: 'Ceará', abbreviation: 'CE' },
-    { name: 'Distrito Federal', abbreviation: 'DF' },
-    { name: 'Espírito Santo', abbreviation: 'ES' },
-    { name: 'Goiás', abbreviation: 'GO' },
-    { name: 'Maranhão', abbreviation: 'MA' },
-    { name: 'Mato Grosso', abbreviation: 'MT' },
-    { name: 'Mato Grosso do Sul', abbreviation: 'MS' },
-    { name: 'Minas Gerais', abbreviation: 'MG' },
-    { name: 'Pará', abbreviation: 'PA' },
-    { name: 'Paraíba', abbreviation: 'PB' },
-    { name: 'Paraná', abbreviation: 'PR' },
-    { name: 'Pernambuco', abbreviation: 'PE' },
-    { name: 'Piauí', abbreviation: 'PI' },
-    { name: 'Rio de Janeiro', abbreviation: 'RJ' },
-    { name: 'Rio Grande do Norte', abbreviation: 'RN' },
-    { name: 'Rio Grande do Sul', abbreviation: 'RS' },
-    { name: 'Rondônia', abbreviation: 'RO' },
-    { name: 'Roraima', abbreviation: 'RR' },
-    { name: 'Santa Catarina', abbreviation: 'SC' },
-    { name: 'São Paulo', abbreviation: 'SP' },
-    { name: 'Sergipe', abbreviation: 'SE' },
-    { name: 'Tocantins', abbreviation: 'TO' },
-  ]);
+  const states = useRef(statesArray);
 
   function onModalSubmit() {
     onStateSelect(currentState);

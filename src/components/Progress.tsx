@@ -47,6 +47,8 @@ export function Progress({ data, isLoading, onRefetch }: ProgressProps) {
               gap='0.5rem'
               p='0.25rem 0.5rem'
               borderRadius='8px'
+              disabled={!data}
+              _disabled={{ cursor: 'not-allowed', opacity: 0.7 }}
             >
               <ArrowCounterClockwise
                 size={16}

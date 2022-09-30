@@ -1,3 +1,4 @@
+import { Flex } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 import {
   BrowserRouter,
@@ -24,7 +25,11 @@ function ResolveRoutes() {
       <RouteDOM
         key={`routes-${route.path}`}
         path={route.path}
-        element={<Route component={Component} />}
+        element={
+          <Flex minH='100vh'>
+            <Route component={Component} />
+          </Flex>
+        }
       />
     );
   });
@@ -36,7 +41,7 @@ export function Router() {
       <Suspense fallback={<Loader />}>
         <Routes>
           {ResolveRoutes()}
-          <RouteDOM path='*' element={<Navigate to='/404' replace />} />
+          <RouteDOM path='*' element={<Navigate to='/' replace />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
